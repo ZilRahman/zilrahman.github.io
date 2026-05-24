@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zil Rahman | Projects</title>
+  <meta name="description" content="Selected projects and case studies by Zil Rahman.">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+  <button class="desktop-icon" type="button" aria-label="Open PROJECTS.TXT">
+    <span class="desktop-icon-image" aria-hidden="true"></span>
+    <span>PROJECTS.TXT</span>
+  </button>
+
+  <div class="win95-window win95-outset">
+    <header class="win95-titlebar">
+      <div class="title-text">
+        <svg class="title-icon" viewBox="0 0 16 16" fill="currentColor">
+          <path d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-7A1.5 1.5 0 0 0 14.5 4H7.5L5.5 2h-4z"/>
+        </svg>
+        <span>PROJECTS.TXT - Document Viewer</span>
+      </div>
+      <div class="titlebar-controls">
+        <button class="win95-btn" aria-label="Minimize">_</button>
+        <button class="win95-btn" aria-label="Maximize">⬜</button>
+        <button class="win95-btn" aria-label="Close">✕</button>
+      </div>
+    </header>
+
+    <nav class="win95-menubar" aria-label="Primary">
+      <a class="menu-item" href="./index.html"><span>H</span>ome</a>
+      <a class="menu-item is-active" href="./projects.html"><span>P</span>rojects</a>
+      <a class="menu-item" href="./about.html"><span>A</span>bout</a>
+      <a class="menu-item" href="./photos.html"><span>C</span>ool</a>
+    </nav>
+
+    <div class="win95-start" aria-label="Windows XP taskbar">
+      <input type="checkbox" id="start-toggle" class="start-toggle" />
+      <label for="start-toggle" class="start-button">Start</label>
+      <div class="start-items">
+        <a href="./index.html">Home</a>
+        <a href="./projects.html">Projects</a>
+        <a href="./about.html">About</a>
+        <a href="./photos.html">Cool</a>
+      </div>
+      <div class="taskbar-divider" aria-hidden="true"></div>
+      <div class="quick-launch" aria-label="Quick launch">
+        <a href="./projects.html" title="Projects">P</a>
+        <a href="mailto:zilrahman52@gmail.com" title="Email">@</a>
+      </div>
+      <a class="taskbar-window is-active" href="./projects.html">
+        <span class="taskbar-icon">[]</span>
+        <span>PROJECTS.TXT</span>
+      </a>
+      <div class="taskbar-tray" aria-label="System tray">
+        <span title="Network">LAN</span>
+        <span title="Volume">VOL</span>
+        <time>12:34 PM</time>
+      </div>
+    </div>
+
+    <main class="win95-document win95-inset">
+      <section class="doc-header">
+        <h1 class="doc-title">Projects</h1>
+        <p class="doc-subtitle">Selected builds, with outcomes and constraints</p>
+        <p class="doc-p" style="margin-bottom: 0;">
+          These are written as portfolio entries (what I built, what I owned, and what changed), not resume bullets.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="doc-section-title">Featured</h2>
+
+        <div class="project-item">
+          <div class="project-head">
+            <a class="retro-link" href="https://findnaseeb.com" target="_blank" rel="noopener">findnaseeb.com</a>
+            <span class="project-tag">2026 // Next.js + SQLite</span>
+          </div>
+          <p class="project-body">
+            A premium, mobile-first matchmaking platform. Built for fast iteration while keeping infra simple and predictable.
+          </p>
+          <ul class="doc-list">
+            <li class="doc-list-item"><strong>Owned:</strong> product engineering end-to-end (web, backend routes, data modeling).</li>
+            <li class="doc-list-item"><strong>Constraints:</strong> performance on mobile, clear onboarding, simple ops.</li>
+            <li class="doc-list-item"><strong>Stack:</strong> Next.js, Node.js, SQLite, Stripe.</li>
+          </ul>
+        </div>
+
+        <div class="project-item">
+          <div class="project-head">
+            <span>Liveworks Hospitality Marketplace</span>
+            <span class="project-tag">2024 // Node + PostgreSQL + AWS</span>
+          </div>
+          <p class="project-body">
+            A marketplace connecting venues with casual workers, with a web admin panel and payments flows.
+          </p>
+          <ul class="doc-list">
+            <li class="doc-list-item"><strong>Owned:</strong> backend services and data workflows (routing, integrity, operational tooling).</li>
+            <li class="doc-list-item"><strong>Constraints:</strong> marketplace payments, role-based permissions, reliability under load.</li>
+            <li class="doc-list-item"><strong>Stack:</strong> Node.js, PostgreSQL, AWS, Stripe.</li>
+          </ul>
+        </div>
+
+        <div class="project-item">
+          <div class="project-head">
+            <a class="retro-link" href="./portfolio/covid-awarness-twitter-bot.html">COVID-19 Twitter Awareness Bot</a>
+            <span class="project-tag">2021 // Node.js + Twitter API</span>
+          </div>
+          <p class="project-body">
+            A bot to monitor content and reply with links to verified sources (historical project).
+          </p>
+          <ul class="doc-list">
+            <li class="doc-list-item"><strong>Owned:</strong> end-to-end automation and deployment.</li>
+            <li class="doc-list-item"><strong>Constraints:</strong> rate limits, safety, and observability.</li>
+            <li class="doc-list-item"><strong>Notes:</strong> includes an archived writeup page in this repo.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="doc-section-title">More</h2>
+
+        <div class="project-item">
+          <div class="project-head">
+            <a class="retro-link" href="http://usedealio.com" target="_blank" rel="noopener">Dealio Platform</a>
+            <span class="project-tag">2023 // Next.js + MongoDB + AWS</span>
+          </div>
+          <p class="project-body">
+            A webhook alert system for monitoring listings and notifying when specific deals appear.
+          </p>
+        </div>
+      </section>
+
+      <footer style="margin-top: 30px; padding-top: 12px; border-top: 1px dashed var(--win-dark-gray); text-align: center; font-size: 11px; font-family: var(--font-mono); color: #555;">
+        PROJECTS.TXT // Compiled in Calgary, AB // Built in 1995 (Simulated)
+      </footer>
+    </main>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>

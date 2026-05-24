@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zil Rahman | Cool</title>
+  <meta name="description" content="A small gallery and fun extras by Zil Rahman.">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+  <button class="desktop-icon" type="button" aria-label="Open COOL.TXT">
+    <span class="desktop-icon-image" aria-hidden="true"></span>
+    <span>COOL.TXT</span>
+  </button>
+
+  <div class="win95-window win95-outset">
+    <header class="win95-titlebar">
+      <div class="title-text">
+        <svg class="title-icon" viewBox="0 0 16 16" fill="currentColor">
+          <path d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-7A1.5 1.5 0 0 0 14.5 4H7.5L5.5 2h-4z"/>
+        </svg>
+        <span>COOL.TXT - Document Viewer</span>
+      </div>
+      <div class="titlebar-controls">
+        <button class="win95-btn" aria-label="Minimize">_</button>
+        <button class="win95-btn" aria-label="Maximize">⬜</button>
+        <button class="win95-btn" aria-label="Close">✕</button>
+      </div>
+    </header>
+
+    <nav class="win95-menubar" aria-label="Primary">
+      <a class="menu-item" href="./index.html"><span>H</span>ome</a>
+      <a class="menu-item" href="./projects.html"><span>P</span>rojects</a>
+      <a class="menu-item" href="./about.html"><span>A</span>bout</a>
+      <a class="menu-item is-active" href="./photos.html"><span>C</span>ool</a>
+    </nav>
+
+    <div class="win95-start" aria-label="Windows XP taskbar">
+      <input type="checkbox" id="start-toggle" class="start-toggle" />
+      <label for="start-toggle" class="start-button">Start</label>
+      <div class="start-items">
+        <a href="./index.html">Home</a>
+        <a href="./projects.html">Projects</a>
+        <a href="./about.html">About</a>
+        <a href="./photos.html">Cool</a>
+      </div>
+      <div class="taskbar-divider" aria-hidden="true"></div>
+      <div class="quick-launch" aria-label="Quick launch">
+        <a href="./projects.html" title="Projects">P</a>
+        <a href="mailto:zilrahman52@gmail.com" title="Email">@</a>
+      </div>
+      <a class="taskbar-window is-active" href="./photos.html">
+        <span class="taskbar-icon">[]</span>
+        <span>COOL.TXT</span>
+      </a>
+      <div class="taskbar-tray" aria-label="System tray">
+        <span title="Network">LAN</span>
+        <span title="Volume">VOL</span>
+        <time>12:34 PM</time>
+      </div>
+    </div>
+
+    <main class="win95-document win95-inset">
+      <section class="doc-header">
+        <h1 class="doc-title">Cool Stuff</h1>
+        <p class="doc-subtitle">Photos, hobbies, and extras</p>
+      </section>
+
+      <section>
+        <h2 class="doc-section-title">Photos</h2>
+        <p class="doc-p">
+          This section is meant to feel human. I can swap these images with whatever you upload next.
+        </p>
+
+        <div class="polaroid-grid">
+          <figure class="polaroid-frame">
+            <img src="./images/car_project.png" alt="Project car" />
+            <figcaption>Project Car</figcaption>
+          </figure>
+          <figure class="polaroid-frame">
+            <img src="./images/alberta_trails.png" alt="Alberta trails" />
+            <figcaption>Alberta Trails</figcaption>
+          </figure>
+          <figure class="polaroid-frame">
+            <img src="./images/aviation_plane.png" alt="Aviation" />
+            <figcaption>Aviation</figcaption>
+          </figure>
+          <figure class="polaroid-frame">
+            <img src="./images/vintage_setup.png" alt="Vintage setup" />
+            <figcaption>Vintage Setup</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="doc-section-title">Quick Facts</h2>
+        <ul class="doc-list">
+          <li class="doc-list-item">Based in Calgary, Alberta.</li>
+          <li class="doc-list-item">I like building systems that feel simple to use and simple to operate.</li>
+          <li class="doc-list-item">I care about performance, reliability, and clean UI.</li>
+        </ul>
+      </section>
+
+      <footer style="margin-top: 30px; padding-top: 12px; border-top: 1px dashed var(--win-dark-gray); text-align: center; font-size: 11px; font-family: var(--font-mono); color: #555;">
+        COOL.TXT // Compiled in Calgary, AB // Built in 1995 (Simulated)
+      </footer>
+    </main>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>

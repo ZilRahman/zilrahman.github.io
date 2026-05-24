@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zil Rahman | About</title>
+  <meta name="description" content="About Zil Rahman - software engineer, builder, and systems-minded developer.">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+  <button class="desktop-icon" type="button" aria-label="Open ABOUT.TXT">
+    <span class="desktop-icon-image" aria-hidden="true"></span>
+    <span>ABOUT.TXT</span>
+  </button>
+
+  <div class="win95-window win95-outset">
+    <header class="win95-titlebar">
+      <div class="title-text">
+        <svg class="title-icon" viewBox="0 0 16 16" fill="currentColor">
+          <path d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-7A1.5 1.5 0 0 0 14.5 4H7.5L5.5 2h-4z"/>
+        </svg>
+        <span>ABOUT.TXT - Document Viewer</span>
+      </div>
+      <div class="titlebar-controls">
+        <button class="win95-btn" aria-label="Minimize">_</button>
+        <button class="win95-btn" aria-label="Maximize">⬜</button>
+        <button class="win95-btn" aria-label="Close">✕</button>
+      </div>
+    </header>
+
+    <nav class="win95-menubar" aria-label="Primary">
+      <a class="menu-item" href="./index.html"><span>H</span>ome</a>
+      <a class="menu-item" href="./projects.html"><span>P</span>rojects</a>
+      <a class="menu-item is-active" href="./about.html"><span>A</span>bout</a>
+      <a class="menu-item" href="./photos.html"><span>C</span>ool</a>
+    </nav>
+
+    <div class="win95-start" aria-label="Windows XP taskbar">
+      <input type="checkbox" id="start-toggle" class="start-toggle" />
+      <label for="start-toggle" class="start-button">Start</label>
+      <div class="start-items">
+        <a href="./index.html">Home</a>
+        <a href="./projects.html">Projects</a>
+        <a href="./about.html">About</a>
+        <a href="./photos.html">Cool</a>
+      </div>
+      <div class="taskbar-divider" aria-hidden="true"></div>
+      <div class="quick-launch" aria-label="Quick launch">
+        <a href="./projects.html" title="Projects">P</a>
+        <a href="mailto:zilrahman52@gmail.com" title="Email">@</a>
+      </div>
+      <a class="taskbar-window is-active" href="./about.html">
+        <span class="taskbar-icon">[]</span>
+        <span>ABOUT.TXT</span>
+      </a>
+      <div class="taskbar-tray" aria-label="System tray">
+        <span title="Network">LAN</span>
+        <span title="Volume">VOL</span>
+        <time>12:34 PM</time>
+      </div>
+    </div>
+
+    <main class="win95-document win95-inset">
+      <section class="doc-header">
+        <h1 class="doc-title">About Me</h1>
+        <p class="doc-subtitle">Systems-minded builder // Calgary, Alberta</p>
+        <div class="header-links">
+          <a class="retro-link" href="mailto:zilrahman52@gmail.com">zilrahman52@gmail.com</a>
+          <span>|</span>
+          <a class="retro-link" href="https://github.com/ZilRahman/" target="_blank" rel="noopener">github.com/ZilRahman</a>
+          <span>|</span>
+          <a class="retro-link" href="https://www.linkedin.com/in/zil-rahman-674b76182/" target="_blank" rel="noopener">linkedin.com/in/zil-rahman</a>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="doc-section-title">What I Do</h2>
+        <p class="doc-p">
+          I build user-facing products with a systems mindset: clean UI, stable architecture, and predictable performance.
+          I like shipping end-to-end features across frontend, backend, and data, then iterating based on real usage.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="doc-section-title">How I Work</h2>
+        <ul class="doc-list">
+          <li class="doc-list-item"><strong>Ownership:</strong> I take a feature from vague idea to shipped, monitored, and improved.</li>
+          <li class="doc-list-item"><strong>Clarity:</strong> I write docs and PRs that explain decisions and tradeoffs, not just code.</li>
+          <li class="doc-list-item"><strong>Performance:</strong> I care about load time, UI responsiveness, and cost per request.</li>
+          <li class="doc-list-item"><strong>Testing:</strong> I prefer confidence through automation (E2E, integration, and pragmatic unit tests).</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="doc-section-title">Outside Work</h2>
+        <p class="doc-p">
+          Away from the keyboard, I spend time on my project car, explore Alberta trails, and go down rabbit holes on aviation and mechanical systems.
+        </p>
+        <p class="doc-p" style="font-size: 11px; font-style: italic; color: #555;">
+          If you want to see the photos section, open Cool in the menu.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="doc-section-title">System Configuration</h2>
+        <div class="specs-box win95-inset">
+          <div class="specs-grid">
+            <div class="specs-label">Languages:</div>
+            <div class="specs-value">TypeScript, JavaScript, Python, Java, C#</div>
+
+            <div class="specs-label">Frontend:</div>
+            <div class="specs-value">React, Next.js, React Native, Flexbox/Grid, CSS Modules</div>
+
+            <div class="specs-label">Backend:</div>
+            <div class="specs-value">Node.js, Express, GraphQL, AWS Lambda/DynamoDB/RDS/S3, Docker</div>
+
+            <div class="specs-label">Databases:</div>
+            <div class="specs-value">PostgreSQL, MySQL, MongoDB, Redis</div>
+
+            <div class="specs-label">Testing/QA:</div>
+            <div class="specs-value">Playwright, E2E integration suites, CI/CD pipelines</div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="doc-section-title">Employment Chronology</h2>
+
+        <div class="chrono-item">
+          <header class="chrono-header">
+            <span class="chrono-title">Software Engineer (Full Stack) — Alberta Motor Association</span>
+            <span class="chrono-date">Nov 2022 – Present</span>
+          </header>
+          <ul class="doc-list">
+            <li class="doc-list-item">Managed migrations of legacy billing POS terminals into optimized <strong>Micro Frontend (MFE)</strong> instances, writing shared production packages for <strong>5+ teams</strong>, reducing setup times by <strong>~60%</strong>.</li>
+            <li class="doc-list-item">Improved key flows and rollout quality, raising agent transaction capacity by <strong>~40%</strong> and improving membership sales volumes by <strong>50%</strong>.</li>
+            <li class="doc-list-item">Implemented Playwright regression testing, shrinking production bugs by <strong>~30%</strong> and stabilizing CI.</li>
+            <li class="doc-list-item">Parallelized test runs and optimized pipelines, securing <strong>65% faster</strong> deployments while maintaining high coverage.</li>
+          </ul>
+        </div>
+
+        <div class="chrono-item">
+          <header class="chrono-header">
+            <span class="chrono-title">Software Engineer (Full Stack) — Monss</span>
+            <span class="chrono-date">Feb 2020 – Oct 2022</span>
+          </header>
+          <ul class="doc-list">
+            <li class="doc-list-item">Built responsive web clients and mobile apps for <strong>10+ businesses</strong>, improving conversions and engagement.</li>
+            <li class="doc-list-item">Reduced hosting overhead by <strong>60%</strong> by refactoring monolithic APIs into scalable, containerized cloud services.</li>
+            <li class="doc-list-item">Minimized maintenance overhead by <strong>70%</strong> by migrating legacy systems to optimized React apps.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="doc-section-title">Credentials & Education</h2>
+        <ul class="doc-list">
+          <li class="doc-list-item">
+            <strong>B.Sc. in Computer Science</strong> — University of Calgary (2013 – 2017)
+            <br><span style="font-size: 11px; color: #555;">Tracks: Algorithms, Networking Protocols, Human-Computer Interaction, Advanced Database Designs.</span>
+          </li>
+          <li class="doc-list-item">
+            <strong>AWS Certified Cloud Practitioner</strong> (Issued 2024)
+          </li>
+        </ul>
+      </section>
+
+      <footer style="margin-top: 30px; padding-top: 12px; border-top: 1px dashed var(--win-dark-gray); text-align: center; font-size: 11px; font-family: var(--font-mono); color: #555;">
+        ABOUT.TXT // Compiled in Calgary, AB // Built in 1995 (Simulated)
+      </footer>
+    </main>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
