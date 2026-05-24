@@ -9,13 +9,21 @@
 </head>
 <body>
 
-  <button class="desktop-icon" type="button" aria-label="Open ZIL_RAHMAN.TXT">
+  <button class="desktop-icon desktop-icon--document" type="button" aria-label="Open ZIL_RAHMAN.TXT" data-open-window="document">
     <span class="desktop-icon-image" aria-hidden="true"></span>
     <span>ZIL_RAHMAN.TXT</span>
   </button>
+  <button class="desktop-icon desktop-icon--minesweeper" type="button" aria-label="Open Minesweeper" data-open-window="minesweeper">
+    <span class="desktop-icon-image desktop-icon-image--minesweeper" aria-hidden="true"></span>
+    <span>Minesweeper</span>
+  </button>
+  <button class="desktop-icon desktop-icon--paint" type="button" aria-label="Open Paint" data-open-window="paint">
+    <span class="desktop-icon-image desktop-icon-image--paint" aria-hidden="true"></span>
+    <span>Paint</span>
+  </button>
 
   <!-- 1. MAIN WINDOW SHELL CONTAINER -->
-  <div class="win95-window win95-outset">
+  <div class="win95-window win95-outset" data-window="document">
     
     <!-- Titlebar Header -->
     <header class="win95-titlebar">
@@ -56,14 +64,23 @@
         <a href="./projects.html" title="Projects">P</a>
         <a href="mailto:zilrahman52@gmail.com" title="Email">@</a>
       </div>
-      <a class="taskbar-window is-active" href="./index.html">
+      <button class="taskbar-window is-active" type="button" data-task-window="document">
         <span class="taskbar-icon">[]</span>
         <span>ZIL_RAHMAN.TXT</span>
-      </a>
+      </button>
+      <button class="taskbar-window is-hidden" type="button" data-task-window="minesweeper">
+        <span class="taskbar-icon">[]</span>
+        <span>Minesweeper</span>
+      </button>
+      <button class="taskbar-window is-hidden" type="button" data-task-window="paint">
+        <span class="taskbar-icon">[]</span>
+        <span>Paint</span>
+      </button>
       <div class="taskbar-tray" aria-label="System tray">
-        <span title="Network">LAN</span>
-        <span title="Volume">VOL</span>
-        <time>12:34 PM</time>
+        <span class="tray-icon tray-icon--volume" title="Volume"></span>
+        <span class="tray-icon tray-icon--network" title="Network"></span>
+        <span class="tray-icon tray-icon--security" title="Security"></span>
+        <time>13:39</time>
       </div>
     </div>
 
@@ -174,6 +191,34 @@
 
     </main>
 
+  </div>
+
+  <div class="win95-window win95-outset app-window is-closed" data-window="minesweeper">
+    <header class="win95-titlebar">
+      <div class="title-text"><span class="title-icon">[M]</span><span>Minesweeper</span></div>
+      <div class="titlebar-controls">
+        <button class="win95-btn" aria-label="Minimize">_</button>
+        <button class="win95-btn" aria-label="Maximize">⬜</button>
+        <button class="win95-btn" aria-label="Close">✕</button>
+      </div>
+    </header>
+    <div class="desktop-app-frame win95-inset">
+      <iframe title="Minesweeper" src="https://urluur.github.io/minesweeper-js/"></iframe>
+    </div>
+  </div>
+
+  <div class="win95-window win95-outset app-window app-window--paint is-closed" data-window="paint">
+    <header class="win95-titlebar">
+      <div class="title-text"><span class="title-icon">[P]</span><span>Paint</span></div>
+      <div class="titlebar-controls">
+        <button class="win95-btn" aria-label="Minimize">_</button>
+        <button class="win95-btn" aria-label="Maximize">⬜</button>
+        <button class="win95-btn" aria-label="Close">✕</button>
+      </div>
+    </header>
+    <div class="desktop-app-frame win95-inset">
+      <iframe title="JS Paint" src="https://jspaint.app"></iframe>
+    </div>
   </div>
 
   <script src="./script.js"></script>

@@ -25,15 +25,25 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-const desktopWindow = document.querySelector(".win95-window");
-const titlebar = document.querySelector(".win95-titlebar");
-const minimizeButton = document.querySelector('.win95-btn[aria-label="Minimize"]');
-const maximizeButton = document.querySelector('.win95-btn[aria-label="Maximize"]');
-const closeButton = document.querySelector('.win95-btn[aria-label="Close"]');
-const taskbarWindow = document.querySelector(".taskbar-window");
-const desktopIcon = document.querySelector(".desktop-icon");
+function updateTrayClocks() {
+  const now = new Date();
+  const formattedTime = new Intl.DateTimeFormat([], {
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  }).format(now);
+
+  document.querySelectorAll(".taskbar-tray time").forEach((clock) => {
+    clock.textContent = formattedTime;
+    clock.setAttribute("datetime", now.toISOString());
+  });
+}
+
+updateTrayClocks();
+setInterval(updateTrayClocks, 1000);
+
 const windowStyleProperties = ["position", "left", "top", "width", "height", "maxWidth", "margin", "zIndex"];
-let savedWindowStyle = null;
+let activeZIndex = 40;
 
 function getTaskbarHeight() {
   const taskbar = document.querySelector(".win95-start");
@@ -41,30 +51,50 @@ function getTaskbarHeight() {
   return taskbar?.getBoundingClientRect().height || 38;
 }
 
-function saveWindowStyle() {
-  if (!desktopWindow) {
-    return;
-  }
-
-  savedWindowStyle = windowStyleProperties.reduce((style, property) => {
-    style[property] = desktopWindow.style[property];
-    return style;
-  }, {});
+function getTaskButton(windowName) {
+  return document.querySelector(`[data-task-window="${windowName}"]`);
 }
 
-function applySavedWindowStyle() {
-  if (!desktopWindow || !savedWindowStyle) {
-    return;
-  }
+function setActiveWindow(targetWindow) {
+  document.querySelectorAll("[data-window]").forEach((desktopWindow) => {
+    const taskButton = getTaskButton(desktopWindow.dataset.window);
+    const isActive = desktopWindow === targetWindow && !desktopWindow.classList.contains("is-minimized") && !desktopWindow.classList.contains("is-closed");
 
-  windowStyleProperties.forEach((property) => {
-    desktopWindow.style[property] = savedWindowStyle[property];
+    taskButton?.classList.toggle("is-active", isActive);
   });
 
-  savedWindowStyle = null;
+  if (!targetWindow || targetWindow.classList.contains("is-minimized") || targetWindow.classList.contains("is-closed")) {
+    return;
+  }
+
+  activeZIndex += 1;
+  targetWindow.style.zIndex = String(activeZIndex);
 }
 
-function setMaximizeButtonState(isMaximized) {
+function saveWindowStyle(desktopWindow) {
+  desktopWindow.dataset.savedStyle = JSON.stringify(windowStyleProperties.reduce((style, property) => {
+    style[property] = desktopWindow.style[property];
+    return style;
+  }, {}));
+}
+
+function applySavedWindowStyle(desktopWindow) {
+  if (!desktopWindow.dataset.savedStyle) {
+    return;
+  }
+
+  const savedStyle = JSON.parse(desktopWindow.dataset.savedStyle);
+
+  windowStyleProperties.forEach((property) => {
+    desktopWindow.style[property] = savedStyle[property] || "";
+  });
+
+  delete desktopWindow.dataset.savedStyle;
+}
+
+function setMaximizeButtonState(desktopWindow, isMaximized) {
+  const maximizeButton = desktopWindow.querySelector('[aria-label="Maximize"], [aria-label="Restore"]');
+
   if (!maximizeButton) {
     return;
   }
@@ -73,25 +103,17 @@ function setMaximizeButtonState(isMaximized) {
   maximizeButton.setAttribute("aria-label", isMaximized ? "Restore" : "Maximize");
 }
 
-function restoreWindow() {
-  if (!desktopWindow || !taskbarWindow) {
-    return;
-  }
+function restoreWindow(desktopWindow) {
+  const taskButton = getTaskButton(desktopWindow.dataset.window);
 
-  desktopWindow.classList.remove("is-closed");
-  desktopWindow.classList.remove("is-minimized");
-  taskbarWindow.style.removeProperty("display");
-  taskbarWindow.classList.remove("is-minimized");
-  taskbarWindow.classList.add("is-active");
+  desktopWindow.classList.remove("is-closed", "is-minimized");
+  taskButton?.classList.remove("is-hidden", "is-minimized");
+  setActiveWindow(desktopWindow);
 }
 
-function maximizeWindow() {
-  if (!desktopWindow) {
-    return;
-  }
-
+function maximizeWindow(desktopWindow) {
   if (!desktopWindow.classList.contains("is-maximized")) {
-    saveWindowStyle();
+    saveWindowStyle(desktopWindow);
   }
 
   desktopWindow.classList.remove("is-minimized", "is-closed");
@@ -103,102 +125,99 @@ function maximizeWindow() {
   desktopWindow.style.height = `calc(100vh - ${getTaskbarHeight()}px)`;
   desktopWindow.style.maxWidth = "none";
   desktopWindow.style.margin = "0";
-  desktopWindow.style.zIndex = "40";
-  setMaximizeButtonState(true);
+  setMaximizeButtonState(desktopWindow, true);
+  setActiveWindow(desktopWindow);
 }
 
-function restoreMaximizedWindow() {
-  if (!desktopWindow) {
-    return;
-  }
-
+function restoreMaximizedWindow(desktopWindow) {
   desktopWindow.classList.remove("is-maximized");
-  applySavedWindowStyle();
-  setMaximizeButtonState(false);
+  applySavedWindowStyle(desktopWindow);
+  setMaximizeButtonState(desktopWindow, false);
 }
 
-function toggleMaximizeWindow() {
-  if (!desktopWindow || desktopWindow.classList.contains("is-minimized") || desktopWindow.classList.contains("is-closed")) {
+function toggleMaximizeWindow(desktopWindow) {
+  if (desktopWindow.classList.contains("is-minimized") || desktopWindow.classList.contains("is-closed")) {
     return;
   }
 
   if (desktopWindow.classList.contains("is-maximized")) {
-    restoreMaximizedWindow();
+    restoreMaximizedWindow(desktopWindow);
+    setActiveWindow(desktopWindow);
   } else {
-    maximizeWindow();
+    maximizeWindow(desktopWindow);
   }
 }
 
-function minimizeWindow() {
-  if (!desktopWindow || !taskbarWindow) {
-    return;
-  }
+function minimizeWindow(desktopWindow) {
+  const taskButton = getTaskButton(desktopWindow.dataset.window);
 
   desktopWindow.classList.add("is-minimized");
-  taskbarWindow.classList.add("is-minimized");
-  taskbarWindow.classList.remove("is-active");
+  taskButton?.classList.remove("is-hidden", "is-active");
+  taskButton?.classList.add("is-minimized");
 }
 
-function closeWindow() {
-  if (!desktopWindow || !taskbarWindow) {
-    return;
+function closeWindow(desktopWindow) {
+  const taskButton = getTaskButton(desktopWindow.dataset.window);
+
+  if (desktopWindow.classList.contains("is-maximized")) {
+    restoreMaximizedWindow(desktopWindow);
   }
 
-  restoreMaximizedWindow();
   desktopWindow.classList.add("is-closed");
   desktopWindow.classList.remove("is-minimized");
-  taskbarWindow.classList.remove("is-active", "is-minimized");
+  taskButton?.classList.add("is-hidden");
+  taskButton?.classList.remove("is-active", "is-minimized");
 }
 
-minimizeButton?.addEventListener("click", (event) => {
-  event.preventDefault();
-  event.stopPropagation();
-  minimizeWindow();
+document.querySelectorAll("[data-open-window]").forEach((desktopIcon) => {
+  desktopIcon.addEventListener("click", () => {
+    const targetWindow = document.querySelector(`[data-window="${desktopIcon.dataset.openWindow}"]`);
+
+    if (targetWindow) {
+      restoreWindow(targetWindow);
+    }
+  });
 });
 
-maximizeButton?.addEventListener("click", (event) => {
-  event.preventDefault();
-  event.stopPropagation();
-  toggleMaximizeWindow();
+document.querySelectorAll("[data-task-window]").forEach((taskButton) => {
+  taskButton.addEventListener("click", () => {
+    const targetWindow = document.querySelector(`[data-window="${taskButton.dataset.taskWindow}"]`);
+
+    if (targetWindow) {
+      restoreWindow(targetWindow);
+    }
+  });
 });
 
-closeButton?.addEventListener("click", (event) => {
-  event.preventDefault();
-  event.stopPropagation();
-  closeWindow();
-});
-
-taskbarWindow?.addEventListener("click", (event) => {
-  event.preventDefault();
-  restoreWindow();
-});
-
-desktopIcon?.addEventListener("click", () => {
-  restoreWindow();
-});
-
-desktopIcon?.addEventListener("keydown", (event) => {
-  if (event.key === "Enter" || event.key === " ") {
-    event.preventDefault();
-    restoreWindow();
-  }
-});
-
-if (desktopWindow && titlebar) {
+document.querySelectorAll("[data-window]").forEach((desktopWindow) => {
+  const titlebar = desktopWindow.querySelector(".win95-titlebar");
   let dragState = null;
 
-  titlebar.addEventListener("pointerdown", (event) => {
+  desktopWindow.addEventListener("pointerdown", () => setActiveWindow(desktopWindow));
+  desktopWindow.querySelector('[aria-label="Minimize"]')?.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    minimizeWindow(desktopWindow);
+  });
+  desktopWindow.querySelector('[aria-label="Maximize"]')?.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    toggleMaximizeWindow(desktopWindow);
+  });
+  desktopWindow.querySelector('[aria-label="Close"]')?.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    closeWindow(desktopWindow);
+  });
+
+  titlebar?.addEventListener("pointerdown", (event) => {
     const clickedControl = event.target instanceof Element && event.target.closest(".titlebar-controls");
 
-    if (
-      event.button !== 0 ||
-      clickedControl ||
-      desktopWindow.classList.contains("is-minimized") ||
-      desktopWindow.classList.contains("is-closed") ||
-      desktopWindow.classList.contains("is-maximized")
-    ) {
+    if (event.button !== 0 || clickedControl || desktopWindow.classList.contains("is-minimized") || desktopWindow.classList.contains("is-closed") || desktopWindow.classList.contains("is-maximized")) {
       return;
     }
+
+    setActiveWindow(desktopWindow);
 
     const rect = desktopWindow.getBoundingClientRect();
 
@@ -221,7 +240,7 @@ if (desktopWindow && titlebar) {
     titlebar.setPointerCapture(event.pointerId);
   });
 
-  titlebar.addEventListener("pointermove", (event) => {
+  titlebar?.addEventListener("pointermove", (event) => {
     if (!dragState) {
       return;
     }
@@ -237,7 +256,7 @@ if (desktopWindow && titlebar) {
     desktopWindow.style.top = `${nextTop}px`;
   });
 
-  titlebar.addEventListener("pointerup", (event) => {
+  titlebar?.addEventListener("pointerup", (event) => {
     if (!dragState) {
       return;
     }
@@ -247,22 +266,22 @@ if (desktopWindow && titlebar) {
     titlebar.releasePointerCapture(event.pointerId);
   });
 
-  titlebar.addEventListener("pointercancel", () => {
+  titlebar?.addEventListener("pointercancel", () => {
     dragState = null;
     desktopWindow.classList.remove("is-dragging");
   });
 
-  titlebar.addEventListener("dblclick", (event) => {
+  titlebar?.addEventListener("dblclick", (event) => {
     const clickedControl = event.target instanceof Element && event.target.closest(".titlebar-controls");
 
     if (!clickedControl) {
-      toggleMaximizeWindow();
+      toggleMaximizeWindow(desktopWindow);
     }
   });
-}
+});
 
 window.addEventListener("resize", () => {
-  if (desktopWindow?.classList.contains("is-maximized")) {
+  document.querySelectorAll("[data-window].is-maximized").forEach((desktopWindow) => {
     desktopWindow.style.height = `calc(100vh - ${getTaskbarHeight()}px)`;
-  }
+  });
 });
