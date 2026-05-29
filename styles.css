@@ -780,15 +780,14 @@ body {
 
 .start-button::before {
   content: '';
-  width: 17px;
-  height: 17px;
-  border-radius: 3px;
-  background:
-    linear-gradient(90deg, transparent 7px, rgba(255, 255, 255, 0.85) 7px, rgba(255, 255, 255, 0.85) 9px, transparent 9px),
-    linear-gradient(0deg, transparent 7px, rgba(255, 255, 255, 0.85) 7px, rgba(255, 255, 255, 0.85) 9px, transparent 9px),
-    linear-gradient(135deg, #F15C45 0 50%, #F6D547 50% 100%);
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
+  width: 22px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.4));
+  /* Classic waving Windows flag */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 22'%3E%3Cg stroke='%23ffffff' stroke-width='0.9' stroke-linejoin='round'%3E%3Cpath d='M2 4.2C5 3 8 3 11 4v6C8 9 5 9 2 10.2z' fill='%23F65314'/%3E%3Cpath d='M13 4C16 3 19 3 22 4.6v6C19 9 16 9 13 10z' fill='%237CBB00'/%3E%3Cpath d='M2 11.8C5 10.6 8 10.6 11 11.6v6C8 16.6 5 16.6 2 17.8z' fill='%2300A1F1'/%3E%3Cpath d='M13 11.6C16 10.6 19 10.6 22 12.2v6C19 16.6 16 16.6 13 17.6z' fill='%23FFBB00'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 .start-button:hover {
