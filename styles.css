@@ -79,6 +79,11 @@ body {
   top: 210px;
 }
 
+.desktop-icon--pictures {
+  top: 304px;
+  text-decoration: none;
+}
+
 .desktop-icon:hover,
 .desktop-icon:focus-visible {
   background: rgba(49, 106, 197, 0.35);
@@ -86,108 +91,43 @@ body {
   outline: none;
 }
 
+/* Authentic XP-style desktop icons (inline SVG, nothing external to break) */
 .desktop-icon-image {
   position: relative;
-  width: 36px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   display: block;
-  background: linear-gradient(180deg, #FFFFFF 0%, #EAF3FF 100%);
-  border: 1px solid #6C8EC8;
-  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.35);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.45));
+  /* Notepad / text document */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath d='M9 3h22l9 9v32a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z' fill='%23fff' stroke='%23808080' stroke-width='1.2'/%3E%3Cpath d='M31 3v9h9z' fill='%23dfe7f2' stroke='%23808080' stroke-width='1.2'/%3E%3Cg stroke='%231a4fb4' stroke-width='2' stroke-linecap='round'%3E%3Cline x1='14' y1='20' x2='34' y2='20'/%3E%3Cline x1='14' y1='26' x2='34' y2='26'/%3E%3Cline x1='14' y1='32' x2='28' y2='32'/%3E%3C/g%3E%3C/svg%3E");
 }
 
-.desktop-icon-image::before {
-  content: '';
-  position: absolute;
-  top: -1px;
-  right: -1px;
-  width: 13px;
-  height: 13px;
-  background: linear-gradient(135deg, #CDE0FF 0 50%, #FFFFFF 50% 100%);
-  border-left: 1px solid #6C8EC8;
-  border-bottom: 1px solid #6C8EC8;
-}
-
-.desktop-icon-image::after {
-  content: '';
-  position: absolute;
-  left: 7px;
-  right: 7px;
-  top: 19px;
-  height: 12px;
-  border-top: 2px solid #2B67C8;
-  border-bottom: 2px solid #2B67C8;
-  box-shadow: 0 5px 0 #2B67C8;
-  opacity: 0.8;
-}
-
+/* Minesweeper — beveled gray tile with mine */
 .desktop-icon-image--minesweeper {
-  width: 39px;
-  height: 39px;
-  border: 2px outset #D5D2C4;
-  background:
-    linear-gradient(90deg, transparent 11px, #ACA899 11px, #ACA899 13px, transparent 13px, transparent 25px, #ACA899 25px, #ACA899 27px, transparent 27px),
-    linear-gradient(0deg, transparent 11px, #ACA899 11px, #ACA899 13px, transparent 13px, transparent 25px, #ACA899 25px, #ACA899 27px, transparent 27px),
-    #ECE9D8;
-}
-
-.desktop-icon-image--minesweeper::before {
-  top: 5px;
-  left: 5px;
-  right: auto;
-  width: 8px;
-  height: 8px;
-  background: #111111;
+  width: 40px;
+  height: 40px;
   border: 0;
-  border-radius: 999px;
-  box-shadow: 18px 18px 0 #111111;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect x='4' y='4' width='40' height='40' rx='2' fill='%23c0bdb0'/%3E%3Cpath d='M4 4h40v3H4z M4 4h3v40H4z' fill='%23fff'/%3E%3Cpath d='M4 41h40v3H4z M41 4h3v40h-3z' fill='%23808078'/%3E%3Ccircle cx='24' cy='24' r='9' fill='%23151515'/%3E%3Cg stroke='%23151515' stroke-width='2.4' stroke-linecap='round'%3E%3Cline x1='24' y1='10' x2='24' y2='38'/%3E%3Cline x1='10' y1='24' x2='38' y2='24'/%3E%3Cline x1='14' y1='14' x2='34' y2='34'/%3E%3Cline x1='34' y1='14' x2='14' y2='34'/%3E%3C/g%3E%3Ccircle cx='20.5' cy='20.5' r='2.4' fill='%23fff'/%3E%3Crect x='22' y='8' width='4' height='4' fill='%23d21e1e'/%3E%3C/svg%3E");
 }
 
-.desktop-icon-image--minesweeper::after {
-  left: 16px;
-  top: 16px;
-  right: auto;
-  width: 7px;
-  height: 7px;
-  background: #D21E1E;
-  border: 0;
-  box-shadow: none;
-  opacity: 1;
-}
-
+/* Paint — palette with brush */
 .desktop-icon-image--paint {
-  width: 42px;
-  height: 38px;
-  border: 2px outset #D5D2C4;
-  background:
-    radial-gradient(circle at 13px 12px, #E3352F 0 4px, transparent 5px),
-    radial-gradient(circle at 25px 11px, #F3D13D 0 4px, transparent 5px),
-    radial-gradient(circle at 30px 23px, #235FC8 0 4px, transparent 5px),
-    radial-gradient(circle at 17px 26px, #3CA740 0 4px, transparent 5px),
-    #F6F0D9;
-  border-radius: 14px 14px 12px 12px;
-}
-
-.desktop-icon-image--paint::before {
-  top: 15px;
-  right: 6px;
-  width: 9px;
-  height: 9px;
-  background: #FFFFFF;
-  border: 1px solid #9E9C93;
-  border-radius: 999px;
-}
-
-.desktop-icon-image--paint::after {
-  left: 27px;
-  top: 25px;
-  width: 14px;
-  height: 5px;
-  background: #8B5A2B;
+  width: 40px;
+  height: 40px;
   border: 0;
-  box-shadow: 8px -8px 0 #D5D2C4;
-  transform: rotate(-35deg);
-  opacity: 1;
+  border-radius: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath d='M22 6C12 6 5 13 5 23c0 7 5 11 11 11 3 0 4-2 4-4 0-3 2-4 5-4h6c6 0 10-4 10-10C41 9 32 6 22 6z' fill='%23f3efe0' stroke='%238a8676' stroke-width='1.3'/%3E%3Ccircle cx='14' cy='17' r='2.6' fill='%23e3352f'/%3E%3Ccircle cx='22' cy='13' r='2.6' fill='%23f3c93d'/%3E%3Ccircle cx='31' cy='15' r='2.6' fill='%233ca740'/%3E%3Ccircle cx='34' cy='23' r='2.6' fill='%23235fc8'/%3E%3Crect x='28' y='30' width='4' height='15' rx='1.5' transform='rotate(-38 30 37)' fill='%238b5a2b'/%3E%3Crect x='27' y='27' width='6' height='6' rx='1' transform='rotate(-38 30 30)' fill='%23c0c0c0'/%3E%3C/svg%3E");
+}
+
+/* My Pictures — manila folder with a photo */
+.desktop-icon-image--pictures {
+  width: 40px;
+  height: 40px;
+  border: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath d='M5 11a2 2 0 0 1 2-2h11l4 4h17a2 2 0 0 1 2 2v6H5z' fill='%23f6c14b' stroke='%23c98a1e' stroke-width='1'/%3E%3Crect x='12' y='12' width='28' height='22' rx='1' fill='%23fff' stroke='%23b9b6a6'/%3E%3Cpath d='M14 32l7-9 5 6 4-4 7 7z' fill='%233ca740'/%3E%3Ccircle cx='31' cy='18' r='3' fill='%23f3c93d'/%3E%3Cpath d='M5 17h38l-3 22a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2z' fill='%23ffd87a' stroke='%23c98a1e' stroke-width='1'/%3E%3C/svg%3E");
 }
 
 /* XP Luna Scrollbar */
@@ -1111,4 +1051,200 @@ body {
     min-width: 43px;
     font-size: 16px;
   }
+}
+
+/* --- 10. BOOT SPLASH (shown once per session) --- */
+.xp-boot {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  color: #ffffff;
+  font-family: var(--font-sans);
+  transition: opacity 0.6s ease;
+}
+
+.xp-boot.is-hiding {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.xp-boot-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.xp-boot-flag {
+  width: 46px;
+  height: 46px;
+  border-radius: 6px;
+  background:
+    linear-gradient(90deg, transparent 20px, rgba(255,255,255,0.85) 20px, rgba(255,255,255,0.85) 24px, transparent 24px),
+    linear-gradient(0deg, transparent 19px, rgba(255,255,255,0.85) 19px, rgba(255,255,255,0.85) 23px, transparent 23px),
+    conic-gradient(from 0deg at 50% 50%, #F15C45 0 90deg, #6EBF47 90deg 180deg, #2490F0 180deg 270deg, #F6D547 270deg 360deg);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  transform: perspective(120px) rotateY(-12deg);
+}
+
+.xp-boot-wordmark {
+  line-height: 1;
+}
+
+.xp-boot-wordmark .micro {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.xp-boot-wordmark .xp {
+  font-size: 40px;
+  font-weight: 700;
+  font-style: italic;
+  background: linear-gradient(180deg, #ff9a3c 0%, #ff6a00 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-left: 4px;
+}
+
+.xp-boot-bar {
+  width: 200px;
+  height: 16px;
+  border: 2px solid #4a6aa5;
+  border-radius: 9px;
+  overflow: hidden;
+  padding: 2px;
+  background: #0a0a18;
+}
+
+.xp-boot-bar::before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 100%;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #1d4ed8, #4f9bff, #1d4ed8);
+  animation: xp-boot-slide 1.4s linear infinite;
+}
+
+@keyframes xp-boot-slide {
+  0% { transform: translateX(-66px); }
+  100% { transform: translateX(200px); }
+}
+
+.xp-boot-footer {
+  position: absolute;
+  bottom: 26px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 28px;
+  font-size: 12px;
+  color: #cdd6e6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .xp-boot-bar::before { animation: none; width: 100%; }
+}
+
+/* --- 11. PICTURE & FAX VIEWER (photo lightbox) --- */
+.photo-thumb {
+  cursor: pointer;
+  border: 0;
+  background: none;
+  padding: 0;
+  width: 100%;
+  font: inherit;
+  text-align: center;
+}
+
+.photo-thumb:focus-visible {
+  outline: 2px solid var(--xp-blue-dark);
+  outline-offset: 2px;
+}
+
+.photo-viewer {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.photo-viewer[hidden] {
+  display: none;
+}
+
+.photo-viewer-window {
+  width: min(760px, 100%);
+  max-height: calc(100vh - 90px);
+  display: flex;
+  flex-direction: column;
+}
+
+.photo-viewer-stage {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #5a6473;
+  padding: 10px;
+}
+
+.photo-viewer-stage img {
+  max-width: 100%;
+  max-height: 60vh;
+  object-fit: contain;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.photo-viewer-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 8px;
+  background: var(--xp-gray);
+  border-top: 1px solid #ACA899;
+}
+
+.photo-viewer-caption {
+  min-width: 120px;
+  text-align: center;
+  font-size: 12px;
+  font-family: var(--font-mono);
+  color: #333;
+}
+
+.photo-nav {
+  width: 34px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #0b51b7;
+  cursor: pointer;
+  background: linear-gradient(180deg, #FFFFFF 0%, var(--xp-gray) 45%, #D5D2C4 100%);
+  border: 1px solid #ACA899;
+  border-radius: 16px;
+}
+
+.photo-nav:hover {
+  border-color: var(--xp-border);
+}
+
+.photo-nav:active {
+  background: linear-gradient(180deg, #D5D2C4 0%, var(--xp-gray) 100%);
 }

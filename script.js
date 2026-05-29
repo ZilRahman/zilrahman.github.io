@@ -285,3 +285,151 @@ window.addEventListener("resize", () => {
     desktopWindow.style.height = `calc(100vh - ${getTaskbarHeight()}px)`;
   });
 });
+
+/* --- Boot splash: shown once per browser session --- */
+function showBootSplash() {
+  let alreadyBooted = false;
+  try {
+    alreadyBooted = sessionStorage.getItem("xp-booted") === "1";
+  } catch (error) {
+    alreadyBooted = false;
+  }
+
+  if (alreadyBooted) {
+    return;
+  }
+
+  const boot = document.createElement("div");
+  boot.className = "xp-boot";
+  boot.setAttribute("role", "status");
+  boot.setAttribute("aria-label", "Starting Windows");
+  boot.innerHTML = `
+    <div class="xp-boot-logo">
+      <span class="xp-boot-flag" aria-hidden="true"></span>
+      <span class="xp-boot-wordmark">
+        <span class="micro">Zil&nbsp;Rahman</span><br>
+        <span class="xp">portfolio XP</span>
+      </span>
+    </div>
+    <div class="xp-boot-bar" aria-hidden="true"></div>
+    <div class="xp-boot-footer">
+      <span>Copyright &copy; Calgary, AB</span>
+      <span>Professional</span>
+    </div>`;
+
+  document.body.appendChild(boot);
+
+  try {
+    sessionStorage.setItem("xp-booted", "1");
+  } catch (error) {
+    /* storage unavailable — splash simply shows every load */
+  }
+
+  const dismiss = () => {
+    boot.classList.add("is-hiding");
+    setTimeout(() => boot.remove(), 700);
+  };
+
+  setTimeout(dismiss, 2400);
+  boot.addEventListener("click", dismiss);
+}
+
+showBootSplash();
+
+/* --- Windows Picture and Fax Viewer (photo lightbox) --- */
+function initPhotoViewer() {
+  const thumbs = Array.from(document.querySelectorAll("[data-photo]"));
+
+  if (!thumbs.length) {
+    return;
+  }
+
+  const photos = thumbs.map((thumb) => ({
+    src: thumb.dataset.photo,
+    caption: thumb.dataset.caption || "",
+  }));
+
+  const viewer = document.createElement("div");
+  viewer.className = "photo-viewer";
+  viewer.hidden = true;
+  viewer.innerHTML = `
+    <div class="win95-window win95-outset photo-viewer-window" role="dialog" aria-modal="true" aria-label="Picture viewer">
+      <header class="win95-titlebar">
+        <div class="title-text">
+          <svg class="title-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h11A1.5 1.5 0 0 1 15 2.5v11a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 13.5v-11zM3 11l3-3.5L8 10l2.5-3L13 11H3z"/></svg>
+          <span class="photo-viewer-title">Windows Picture and Fax Viewer</span>
+        </div>
+        <div class="titlebar-controls">
+          <button class="win95-btn" type="button" data-photo-close aria-label="Close">&#10005;</button>
+        </div>
+      </header>
+      <div class="photo-viewer-stage win95-inset">
+        <img alt="">
+      </div>
+      <div class="photo-viewer-toolbar">
+        <button class="photo-nav" type="button" data-photo-prev aria-label="Previous">&#8249;</button>
+        <span class="photo-viewer-caption"></span>
+        <button class="photo-nav" type="button" data-photo-next aria-label="Next">&#8250;</button>
+      </div>
+    </div>`;
+
+  document.body.appendChild(viewer);
+
+  const image = viewer.querySelector(".photo-viewer-stage img");
+  const caption = viewer.querySelector(".photo-viewer-caption");
+  const titleText = viewer.querySelector(".photo-viewer-title");
+  let current = 0;
+
+  function render() {
+    const photo = photos[current];
+    image.src = photo.src;
+    image.alt = photo.caption;
+    caption.textContent = `${photo.caption}  (${current + 1} / ${photos.length})`;
+    titleText.textContent = `${photo.caption} — Windows Picture and Fax Viewer`;
+  }
+
+  function open(index) {
+    current = index;
+    render();
+    viewer.hidden = false;
+  }
+
+  function close() {
+    viewer.hidden = true;
+  }
+
+  function step(delta) {
+    current = (current + delta + photos.length) % photos.length;
+    render();
+  }
+
+  thumbs.forEach((thumb, index) => {
+    thumb.addEventListener("click", () => open(index));
+  });
+
+  viewer.querySelector("[data-photo-close]").addEventListener("click", close);
+  viewer.querySelector("[data-photo-prev]").addEventListener("click", () => step(-1));
+  viewer.querySelector("[data-photo-next]").addEventListener("click", () => step(1));
+
+  viewer.addEventListener("click", (event) => {
+    if (event.target === viewer) {
+      close();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (viewer.hidden) {
+      return;
+    }
+
+    if (event.key === "Escape") {
+      close();
+    } else if (event.key === "ArrowLeft") {
+      step(-1);
+    } else if (event.key === "ArrowRight") {
+      step(1);
+    }
+  });
+}
+
+initPhotoViewer();
