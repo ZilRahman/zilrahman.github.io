@@ -84,30 +84,57 @@
 
     <main class="win95-document win95-inset">
       <section class="doc-header">
-        <h1 class="doc-title">Projects</h1>
-        <p class="doc-subtitle">Selected builds, with outcomes and constraints</p>
+        <h1 class="doc-title">Selected Work</h1>
+        <p class="doc-subtitle">Case studies — what I built, what I owned, and what changed</p>
         <p class="doc-p" style="margin-bottom: 0;">
-          These are written as portfolio entries (what I built, what I owned, and what changed), not resume bullets.
+          A focused set of recent, production work. Written as case studies, not resume bullets.
         </p>
       </section>
 
       <section>
-        <h2 class="doc-section-title">Featured</h2>
+        <h2 class="doc-section-title">findnaseeb — In-Person, AI-Assisted Matchmaking</h2>
 
         <div class="project-item">
           <div class="project-head">
             <a class="retro-link" href="https://findnaseeb.com" target="_blank" rel="noopener">findnaseeb.com</a>
-            <span class="project-tag">2026 // Next.js + SQLite</span>
+            <span class="project-tag">2026 // Next.js · TypeScript · Technical Co-founder</span>
           </div>
           <p class="project-body">
-            A premium, mobile-first matchmaking platform. Built for fast iteration while keeping infra simple and predictable.
+            Matchmaking built around real-life, in-person events — a modern "third space" for the Muslim community, rather than another profile-swiping app. I co-founded it with a 3-person founding team (two engineers and a product/UX designer) and built the product end-to-end.
           </p>
           <ul class="doc-list">
-            <li class="doc-list-item"><strong>Owned:</strong> product engineering end-to-end (web, backend routes, data modeling).</li>
-            <li class="doc-list-item"><strong>Constraints:</strong> performance on mobile, clear onboarding, simple ops.</li>
-            <li class="doc-list-item"><strong>Stack:</strong> Next.js, Node.js, SQLite, Stripe.</li>
+            <li class="doc-list-item"><strong>AI-assisted curation:</strong> member profiles and event context — location, pool strength, new vs. returning members, prior invites — run through AI to shortlist who to invite, then a human review pass finalizes each event.</li>
+            <li class="doc-list-item"><strong>Why it works:</strong> combing each event over multiple passes is why every one has landed — high-touch curation, not a swipe feed.</li>
+            <li class="doc-list-item"><strong>Owned:</strong> product engineering end-to-end — web, APIs, and data modeling.</li>
+            <li class="doc-list-item"><strong>Trust &amp; safety:</strong> member blocking with team-side visibility, backed by clear community standards.</li>
+            <li class="doc-list-item"><strong>Traction:</strong> launched early 2026; ~200 members in Calgary grown 100% organically (Instagram/TikTok, no paid ads), with waitlists open in Toronto, Vancouver, and Chicago.</li>
+            <li class="doc-list-item"><strong>Stack:</strong> Next.js, TypeScript, SQLite.</li>
           </ul>
         </div>
+      </section>
+
+      <section>
+        <h2 class="doc-section-title">Alberta Motor Association — Micro-Frontend Platform</h2>
+
+        <div class="project-item">
+          <div class="project-head">
+            <span>Billing POS → Micro-Frontend Migration</span>
+            <span class="project-tag">2022–Present // React + MFE + TypeScript</span>
+          </div>
+          <p class="project-body">
+            Led the migration of legacy billing/POS terminals into a modern micro-frontend architecture, authoring shared production packages consumed across 5+ teams — work that set the front-end standard for the org.
+          </p>
+          <ul class="doc-list">
+            <li class="doc-list-item"><strong>Impact:</strong> cut new-app setup time ~60%, raised agent transaction capacity ~40%, and lifted membership sales volume ~50%.</li>
+            <li class="doc-list-item"><strong>Quality:</strong> introduced Playwright regression suites, reducing production bugs ~30% and stabilizing CI.</li>
+            <li class="doc-list-item"><strong>Delivery:</strong> parallelized test runs and pipelines for 65% faster deploys while holding high coverage.</li>
+            <li class="doc-list-item"><strong>Stack:</strong> React, Micro-Frontends, TypeScript, Playwright, CI/CD.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="doc-section-title">Liveworks — Hospitality Marketplace</h2>
 
         <div class="project-item">
           <div class="project-head">
@@ -115,43 +142,18 @@
             <span class="project-tag">2024 // Node + PostgreSQL + AWS</span>
           </div>
           <p class="project-body">
-            A marketplace connecting venues with casual workers, with a web admin panel and payments flows.
+            A two-sided marketplace connecting venues with casual workers, with a web admin panel and marketplace payments.
           </p>
           <ul class="doc-list">
-            <li class="doc-list-item"><strong>Owned:</strong> backend services and data workflows (routing, integrity, operational tooling).</li>
-            <li class="doc-list-item"><strong>Constraints:</strong> marketplace payments, role-based permissions, reliability under load.</li>
+            <li class="doc-list-item"><strong>Owned:</strong> backend services and data workflows — routing, data integrity, and operational tooling.</li>
+            <li class="doc-list-item"><strong>Constraints:</strong> marketplace payments, role-based permissions, and reliability under load.</li>
             <li class="doc-list-item"><strong>Stack:</strong> Node.js, PostgreSQL, AWS, Stripe.</li>
           </ul>
         </div>
 
-        <div class="project-item">
-          <div class="project-head">
-            <a class="retro-link" href="./portfolio/covid-awarness-twitter-bot.html">COVID-19 Twitter Awareness Bot</a>
-            <span class="project-tag">2021 // Node.js + Twitter API</span>
-          </div>
-          <p class="project-body">
-            A bot to monitor content and reply with links to verified sources (historical project).
-          </p>
-          <ul class="doc-list">
-            <li class="doc-list-item"><strong>Owned:</strong> end-to-end automation and deployment.</li>
-            <li class="doc-list-item"><strong>Constraints:</strong> rate limits, safety, and observability.</li>
-            <li class="doc-list-item"><strong>Notes:</strong> includes an archived writeup page in this repo.</li>
-          </ul>
-        </div>
-      </section>
-
-      <section>
-        <h2 class="doc-section-title">More</h2>
-
-        <div class="project-item">
-          <div class="project-head">
-            <a class="retro-link" href="http://usedealio.com" target="_blank" rel="noopener">Dealio Platform</a>
-            <span class="project-tag">2023 // Next.js + MongoDB + AWS</span>
-          </div>
-          <p class="project-body">
-            A webhook alert system for monitoring listings and notifying when specific deals appear.
-          </p>
-        </div>
+        <p class="doc-p" style="margin-top: 16px;">
+          <a class="retro-link" href="https://github.com/ZilRahman/" target="_blank" rel="noopener">Earlier projects on GitHub →</a>
+        </p>
       </section>
 
       <footer style="margin-top: 30px; padding-top: 12px; border-top: 1px dashed #ACA899; text-align: center; font-size: 11px; font-family: var(--font-mono); color: #555;">
