@@ -647,7 +647,7 @@ body {
 
 .project-tag {
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 12px;
   background-color: #E8F0FE;
   padding: 1px 6px;
   border: 1px solid #7AA6D5;
