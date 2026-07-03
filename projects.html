@@ -117,17 +117,19 @@
 
         <div class="project-item">
           <div class="project-head">
-            <span>Billing POS → Micro-Frontend Migration</span>
-            <span class="project-tag">2022–Present // React + MFE + TypeScript</span>
+            <span>POS web app → Micro-Frontends</span>
+            <span class="project-tag">2022–Present // React · MFE · TypeScript</span>
           </div>
           <p class="project-body">
-            AMA's billing and POS ran on aging terminal apps. I helped move them to micro-frontends so teams could ship on their own instead of waiting on one big release. I wrote the shared packages everyone builds on.
+            AMA's agent POS was an aging web app: bloated, buggy, and slow to change. When I joined we started rebuilding it. I was one of the first to lead the spike on micro-frontends and built the proof of concept we used to break the monolith apart. Once it was decoupled into MFEs, the app got faster and easier for agents to use, and it moved membership and product sales.
           </p>
           <ul class="doc-list">
-            <li class="doc-list-item"><strong>Setup:</strong> spinning up a new app used to mean copying boilerplate for days. The shared tooling I wrote brought that down to about a day, roughly 60% less, and it's the same setup 5+ teams use now.</li>
-            <li class="doc-list-item"><strong>Throughput:</strong> I reworked the high-traffic transaction flows. Agents could get through about 40% more per shift, and membership sales went up with it.</li>
-            <li class="doc-list-item"><strong>Deploys:</strong> the test suite was the bottleneck. Parallelizing it cut deploy time by about 65% with no loss in coverage, and having Playwright catch regressions before release dropped production bugs by about 30%.</li>
-            <li class="doc-list-item"><strong>The hard part:</strong> micro-frontends aren't free. Shared dependencies and version drift across 5+ teams get painful fast. A lot of the job was the unglamorous work of keeping those shared packages stable so nobody got blocked.</li>
+            <li class="doc-list-item"><strong>What stuck around:</strong> I wrote the first template MFE repo, which other teams have reused many times, and a shared helper library for the functions every MFE needs. Together they cut a lot of duplicated code.</li>
+            <li class="doc-list-item"><strong>Recent work:</strong> a new "Community" membership tier. It's a lower-cost monthly plan where members pick the benefits they want and skip the ones they don't.</li>
+            <li class="doc-list-item"><strong>Faster to build and ship:</strong> spinning up a new app used to take days of boilerplate. The template and shared tooling brought that to about a day (roughly 60% less), and parallelizing the test suite made deploys about 65% faster.</li>
+            <li class="doc-list-item"><strong>Better for agents:</strong> smoother transaction flows let agents get through about 40% more per shift, and Playwright catching regressions before release dropped production bugs about 30%.</li>
+            <li class="doc-list-item"><strong>The hard part:</strong> micro-frontends aren't free. Shared dependencies drift across teams and get painful fast, so a lot of the work is keeping those shared packages stable so nobody gets blocked.</li>
+            <li class="doc-list-item"><strong>Beyond code:</strong> I mentor new interns and take scrum roles on the team.</li>
           </ul>
         </div>
       </section>

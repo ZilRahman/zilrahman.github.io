@@ -718,10 +718,10 @@ body {
 }
 
 .polaroid-frame img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
   display: block;
-  margin: 0 auto 4px;
+  margin: 0;
   border-radius: 2px;
 }
 

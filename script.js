@@ -383,9 +383,12 @@ function initPhotoViewer() {
   function render() {
     const photo = photos[current];
     image.src = photo.src;
-    image.alt = photo.caption;
-    caption.textContent = `${photo.caption}  (${current + 1} / ${photos.length})`;
-    titleText.textContent = `${photo.caption} — Windows Picture and Fax Viewer`;
+    image.alt = photo.caption || "";
+    const position = `${current + 1} / ${photos.length}`;
+    caption.textContent = photo.caption ? `${photo.caption} · ${position}` : position;
+    titleText.textContent = photo.caption
+      ? `${photo.caption} — Windows Picture and Fax Viewer`
+      : "Windows Picture and Fax Viewer";
   }
 
   function open(index) {
