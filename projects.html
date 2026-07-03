@@ -85,9 +85,9 @@
     <main class="win95-document win95-inset">
       <section class="doc-header">
         <h1 class="doc-title">Selected Work</h1>
-        <p class="doc-subtitle">Case studies — what I built, what I owned, and what changed</p>
+        <p class="doc-subtitle">What I built, the decisions behind it, and what changed</p>
         <p class="doc-p" style="margin-bottom: 0;">
-          A focused set of recent, production work. Written as case studies, not resume bullets.
+          A few recent things I built and shipped. Written as short case studies, not resume bullets.
         </p>
       </section>
 
@@ -100,15 +100,14 @@
             <span class="project-tag">2026 // Next.js · TypeScript · Technical Co-founder</span>
           </div>
           <p class="project-body">
-            Matchmaking built around real-life, in-person events — a modern "third space" for the Muslim community, rather than another profile-swiping app. I co-founded it with a 3-person founding team (two engineers and a product/UX designer) and built the product end-to-end.
+            Most dating apps are built around swiping. We wanted to start somewhere else: getting people into the same room. findnaseeb is built around real events instead of profiles. I co-founded it with two other people (one engineer, one product/UX designer) and built the app.
           </p>
           <ul class="doc-list">
-            <li class="doc-list-item"><strong>AI-assisted curation:</strong> member profiles and event context — location, pool strength, new vs. returning members, prior invites — run through AI to shortlist who to invite, then a human review pass finalizes each event.</li>
-            <li class="doc-list-item"><strong>Why it works:</strong> combing each event over multiple passes is why every one has landed — high-touch curation, not a swipe feed.</li>
-            <li class="doc-list-item"><strong>Owned:</strong> product engineering end-to-end — web, APIs, and data modeling.</li>
-            <li class="doc-list-item"><strong>Trust &amp; safety:</strong> member blocking with team-side visibility, backed by clear community standards.</li>
-            <li class="doc-list-item"><strong>Traction:</strong> launched early 2026; ~200 members in Calgary grown 100% organically (Instagram/TikTok, no paid ads), with waitlists open in Toronto, Vancouver, and Chicago.</li>
-            <li class="doc-list-item"><strong>Stack:</strong> Next.js, TypeScript, SQLite.</li>
+            <li class="doc-list-item"><strong>What I built:</strong> the web app, the APIs, the data model, and the AI step that shortlists who to invite to each event.</li>
+            <li class="doc-list-item"><strong>The AI part:</strong> it looks at profiles and some context (location, who's new, who's been before, group balance) and drafts a guest list. We always review that by hand before anything goes out.</li>
+            <li class="doc-list-item"><strong>A tradeoff I'd defend:</strong> we're a small team, so I kept the stack deliberately boring. Next.js and SQLite on a single box. It's easy to run and easy to reason about, and we'll move off SQLite when concurrency actually forces us to.</li>
+            <li class="doc-list-item"><strong>Trust &amp; safety:</strong> members can block anyone, and blocks come straight to us. We haven't needed heavy automated moderation. Meeting in person tends to self-select for people who behave.</li>
+            <li class="doc-list-item"><strong>Where it's at:</strong> launched early 2026. About 200+ members in Calgary, all from organic Instagram and TikTok. Waitlists open in Toronto, Vancouver, and Chicago.</li>
           </ul>
         </div>
       </section>
@@ -122,13 +121,13 @@
             <span class="project-tag">2022–Present // React + MFE + TypeScript</span>
           </div>
           <p class="project-body">
-            Led the migration of legacy billing/POS terminals into a modern micro-frontend architecture, authoring shared production packages consumed across 5+ teams — work that set the front-end standard for the org.
+            AMA's billing and POS ran on aging terminal apps. I helped move them to micro-frontends so teams could ship on their own instead of waiting on one big release. I wrote the shared packages everyone builds on.
           </p>
           <ul class="doc-list">
-            <li class="doc-list-item"><strong>Impact:</strong> cut new-app setup time ~60%, raised agent transaction capacity ~40%, and lifted membership sales volume ~50%.</li>
-            <li class="doc-list-item"><strong>Quality:</strong> introduced Playwright regression suites, reducing production bugs ~30% and stabilizing CI.</li>
-            <li class="doc-list-item"><strong>Delivery:</strong> parallelized test runs and pipelines for 65% faster deploys while holding high coverage.</li>
-            <li class="doc-list-item"><strong>Stack:</strong> React, Micro-Frontends, TypeScript, Playwright, CI/CD.</li>
+            <li class="doc-list-item"><strong>Setup:</strong> spinning up a new app used to mean copying boilerplate for days. The shared tooling I wrote brought that down to about a day, roughly 60% less, and it's the same setup 5+ teams use now.</li>
+            <li class="doc-list-item"><strong>Throughput:</strong> I reworked the high-traffic transaction flows. Agents could get through about 40% more per shift, and membership sales went up with it.</li>
+            <li class="doc-list-item"><strong>Deploys:</strong> the test suite was the bottleneck. Parallelizing it cut deploy time by about 65% with no loss in coverage, and having Playwright catch regressions before release dropped production bugs by about 30%.</li>
+            <li class="doc-list-item"><strong>The hard part:</strong> micro-frontends aren't free. Shared dependencies and version drift across 5+ teams get painful fast. A lot of the job was the unglamorous work of keeping those shared packages stable so nobody got blocked.</li>
           </ul>
         </div>
       </section>
@@ -142,11 +141,11 @@
             <span class="project-tag">2024 // Node + PostgreSQL + AWS</span>
           </div>
           <p class="project-body">
-            A two-sided marketplace connecting venues with casual workers, with a web admin panel and marketplace payments.
+            A marketplace that connects venues with casual staff. It runs payments between both sides and has a web admin panel.
           </p>
           <ul class="doc-list">
-            <li class="doc-list-item"><strong>Owned:</strong> backend services and data workflows — routing, data integrity, and operational tooling.</li>
-            <li class="doc-list-item"><strong>Constraints:</strong> marketplace payments, role-based permissions, and reliability under load.</li>
+            <li class="doc-list-item"><strong>What I built:</strong> the backend. Job routing, payments between venues and workers, and the tools the ops team used every day.</li>
+            <li class="doc-list-item"><strong>The hard part:</strong> marketplace payments. Money moving between two sides means edge cases everywhere: refunds, no-shows, disputes. Most of the work went into the unhappy paths.</li>
             <li class="doc-list-item"><strong>Stack:</strong> Node.js, PostgreSQL, AWS, Stripe.</li>
           </ul>
         </div>
@@ -157,7 +156,7 @@
       </section>
 
       <footer style="margin-top: 30px; padding-top: 12px; border-top: 1px dashed #ACA899; text-align: center; font-size: 11px; font-family: var(--font-mono); color: #555;">
-        PROJECTS.TXT // Compiled in Calgary, AB // Built in 1995 (Simulated)
+        PROJECTS.TXT · Calgary, AB
       </footer>
     </main>
   </div>

@@ -521,26 +521,24 @@ body {
   color: #555555;
 }
 
-/* Main Section Heading — XP style */
+/* Main Section Heading — softened for a calmer reading area */
 .doc-section-title {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: bold;
   color: var(--xp-blue-dark);
-  background: linear-gradient(90deg, #E8F0FE 0%, var(--xp-gray) 100%);
-  padding: 5px 10px;
-  margin: 20px 0 10px 0;
-  border-left: 4px solid var(--xp-blue-dark);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  border-radius: 0 3px 3px 0;
+  background: linear-gradient(90deg, #EEF4FE 0%, rgba(236, 233, 216, 0) 55%);
+  padding: 4px 0 4px 10px;
+  margin: 30px 0 12px 0;
+  border-left: 3px solid var(--xp-blue-dark);
+  letter-spacing: 0.2px;
 }
 
 /* Text elements & Paragraph spacing */
 .doc-p {
   font-size: 13px;
-  line-height: 1.5;
-  margin-bottom: 10px;
-  text-align: justify;
+  line-height: 1.6;
+  margin-bottom: 12px;
+  text-align: left;
 }
 
 .doc-p strong {
@@ -559,7 +557,7 @@ body {
 
 .doc-list-item {
   font-size: 13px;
-  line-height: 1.4;
+  line-height: 1.55;
   padding-left: 2px;
 }
 
@@ -657,7 +655,7 @@ body {
 
 .project-body {
   font-size: 13px;
-  line-height: 1.4;
+  line-height: 1.55;
   color: #333333;
 }
 
@@ -681,15 +679,15 @@ body {
   }
 
   .doc-p {
-    font-size: 12px;
+    font-size: 13.5px;
   }
 
   .doc-list-item {
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .project-body {
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .hero {
