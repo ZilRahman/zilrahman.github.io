@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zil Rahman | Micro-Frontend Platform Case Study</title>
+  <meta name="description" content="Case study: extending and operationalizing a React micro-frontend platform at Alberta Motor Association — shared tooling, module federation, and infrastructure-as-code delivery.">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+  <button class="desktop-icon desktop-icon--document" type="button" aria-label="Open PLATFORM.TXT" data-open-window="document">
+    <span class="desktop-icon-image" aria-hidden="true"></span>
+    <span>PLATFORM.TXT</span>
+  </button>
+  <button class="desktop-icon desktop-icon--minesweeper" type="button" aria-label="Open Minesweeper" data-open-window="minesweeper">
+    <span class="desktop-icon-image desktop-icon-image--minesweeper" aria-hidden="true"></span>
+    <span>Minesweeper</span>
+  </button>
+  <button class="desktop-icon desktop-icon--paint" type="button" aria-label="Open Paint" data-open-window="paint">
+    <span class="desktop-icon-image desktop-icon-image--paint" aria-hidden="true"></span>
+    <span>Paint</span>
+  </button>
+  <a class="desktop-icon desktop-icon--pictures" href="./photos.html" aria-label="Open My Pictures">
+    <span class="desktop-icon-image desktop-icon-image--pictures" aria-hidden="true"></span>
+    <span>My Pictures</span>
+  </a>
+
+  <div class="win95-window win95-outset" data-window="document">
+    <header class="win95-titlebar">
+      <div class="title-text">
+        <svg class="title-icon" viewBox="0 0 16 16" fill="currentColor">
+          <path d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-7A1.5 1.5 0 0 0 14.5 4H7.5L5.5 2h-4z"/>
+        </svg>
+        <span>PLATFORM.TXT - Document Viewer</span>
+      </div>
+      <div class="titlebar-controls">
+        <button class="win95-btn" aria-label="Minimize">_</button>
+        <button class="win95-btn" aria-label="Maximize">⬜</button>
+        <button class="win95-btn" aria-label="Close">✕</button>
+      </div>
+    </header>
+
+    <nav class="win95-menubar" aria-label="Primary">
+      <a class="menu-item" href="./index.html"><span>H</span>ome</a>
+      <a class="menu-item is-active" href="./projects.html"><span>P</span>rojects</a>
+      <a class="menu-item" href="./about.html"><span>A</span>bout</a>
+      <a class="menu-item" href="./photos.html"><span>P</span>hotos</a>
+    </nav>
+
+    <div class="win95-start" aria-label="Windows XP taskbar">
+      <input type="checkbox" id="start-toggle" class="start-toggle" />
+      <label for="start-toggle" class="start-button">Start</label>
+      <div class="start-items">
+        <a href="./index.html">Home</a>
+        <a href="./projects.html">Projects</a>
+        <a href="./about.html">About</a>
+        <a href="./photos.html">Photos</a>
+      </div>
+      <div class="taskbar-divider" aria-hidden="true"></div>
+      <div class="quick-launch" aria-label="Quick launch">
+        <a href="./projects.html" title="Projects">P</a>
+        <a href="mailto:zilrahman52@gmail.com" title="Email">@</a>
+      </div>
+      <button class="taskbar-window is-active" type="button" data-task-window="document">
+        <span class="taskbar-icon">[]</span>
+        <span>PLATFORM.TXT</span>
+      </button>
+      <button class="taskbar-window is-hidden" type="button" data-task-window="minesweeper">
+        <span class="taskbar-icon">[]</span>
+        <span>Minesweeper</span>
+      </button>
+      <button class="taskbar-window is-hidden" type="button" data-task-window="paint">
+        <span class="taskbar-icon">[]</span>
+        <span>Paint</span>
+      </button>
+      <div class="taskbar-tray" aria-label="System tray">
+        <span class="tray-icon tray-icon--volume" title="Volume"></span>
+        <span class="tray-icon tray-icon--network" title="Network"></span>
+        <span class="tray-icon tray-icon--security" title="Security"></span>
+        <time>13:39</time>
+      </div>
+    </div>
+
+    <main class="win95-document win95-inset">
+      <section class="doc-header">
+        <p style="font-size: 12px; margin-bottom: 6px;"><a class="retro-link" href="./projects.html">← Projects</a></p>
+        <h1 class="doc-title">AMA — Micro-Frontend Platform</h1>
+        <p class="doc-subtitle">Case study · Alberta Motor Association · 2022–Present</p>
+        <p class="case-lead">
+          AMA's staff software is a large React application that many teams build in at once. It runs as a micro-frontend platform: a container shell hosts independently built and deployed frontends, on top of shared tooling that keeps them consistent. The platform existed before I joined. My work was to extend, harden, and operationalize it, and to build one of its frontends from scratch.
+        </p>
+        <p class="case-stats">new-MFE setup ~80% faster · CI ~65% faster · 27 remote modules</p>
+      </section>
+
+      <section>
+        <h2 class="doc-section-title">The problem</h2>
+        <p class="doc-p">
+          As more teams worked in the same app, shipping got harder. Everything shared one release, teams blocked each other, and standing up a new frontend meant copying a lot of boilerplate. The platform needed to let teams build, test, and deploy independently, on a consistent foundation.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="doc-section-title">What I built</h2>
+        <ul class="doc-list">
+          <li class="doc-list-item"><strong>Composition:</strong> extended the container and a lightweight dev shell so teams can run, test, and integrate their frontends without launching the whole platform. Did host-side integration across 5+ MFE surfaces (payments, member servicing, registry, communication preferences, cart) and the Module Federation wiring behind it.</li>
+          <li class="doc-list-item"><strong>A greenfield MFE:</strong> built the communication-preferences frontend from its first commit, through deployment and later backend work.</li>
+          <li class="doc-list-item"><strong>The shared paved road:</strong> hardened the starter template and shared library other teams build on, with tests, error handling, production-deploy safeguards, shared mounting and compatibility, and security-sensitive dependency updates.</li>
+          <li class="doc-list-item"><strong>Repeatable delivery:</strong> reduced the lightweight shell's deploy to a single root-level command, moved container hosting into CDK, and set up automated PR-preview environments and staged releases instead of manual setup.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="doc-section-title">Architecture</h2>
+        <figure class="case-figure">
+          <svg viewBox="0 0 720 104" xmlns="http://www.w3.org/2000/svg" font-family="Tahoma, sans-serif" role="img" aria-label="A shared template and library feed independently built MFEs, which go through automated delivery and are composed by the container shell for staff.">
+            <defs>
+              <marker id="arr" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto">
+                <path d="M0 0 L6 3 L0 6 z" fill="#7AA6D5"/>
+              </marker>
+            </defs>
+            <g stroke="#7AA6D5" stroke-width="1.6" fill="none" marker-end="url(#arr)">
+              <line x1="139" y1="48" x2="158" y2="48"/>
+              <line x1="279" y1="48" x2="298" y2="48"/>
+              <line x1="419" y1="48" x2="438" y2="48"/>
+              <line x1="559" y1="48" x2="578" y2="48"/>
+            </g>
+            <rect x="21" y="20" width="118" height="56" rx="4" fill="#E8F0FE" stroke="#7AA6D5"/>
+            <text x="80" y="44" text-anchor="middle" fill="#0054E3" font-size="11.5" font-weight="bold">Template &amp;</text>
+            <text x="80" y="60" text-anchor="middle" fill="#0054E3" font-size="11.5" font-weight="bold">shared library</text>
+            <rect x="161" y="20" width="118" height="56" rx="4" fill="#E8F0FE" stroke="#7AA6D5"/>
+            <text x="220" y="44" text-anchor="middle" fill="#0054E3" font-size="12" font-weight="bold">Independent</text>
+            <text x="220" y="60" text-anchor="middle" fill="#0054E3" font-size="12" font-weight="bold">MFEs</text>
+            <rect x="301" y="20" width="118" height="56" rx="4" fill="#E8F0FE" stroke="#7AA6D5"/>
+            <text x="360" y="44" text-anchor="middle" fill="#0054E3" font-size="12" font-weight="bold">Automated</text>
+            <text x="360" y="60" text-anchor="middle" fill="#0054E3" font-size="12" font-weight="bold">build · deploy</text>
+            <rect x="441" y="20" width="118" height="56" rx="4" fill="#E8F0FE" stroke="#7AA6D5"/>
+            <text x="500" y="44" text-anchor="middle" fill="#0054E3" font-size="12" font-weight="bold">Shell composes</text>
+            <text x="500" y="60" text-anchor="middle" fill="#0054E3" font-size="12" font-weight="bold">the MFEs</text>
+            <rect x="581" y="20" width="118" height="56" rx="4" fill="#0054E3"/>
+            <text x="640" y="52" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">Staff</text>
+          </svg>
+          <figcaption>
+            A shared template and library keep new frontends consistent. Each MFE builds and deploys on its own, and the container shell composes them into one experience for staff.
+          </figcaption>
+        </figure>
+      </section>
+
+      <div class="case-callout">
+        <strong>Why it's built this way.</strong> A platform's real users are the other engineers. The highest-leverage work wasn't a feature. It was the paved road: a template, a shared library, single-command deploys, and PR previews, so a new team starts from "clone and go" instead of reverse-engineering the last team's setup. Unglamorous, but it's what lets independent teams ship without a central bottleneck.
+      </div>
+
+      <section>
+        <h2 class="doc-section-title">What it delivered</h2>
+        <ul class="doc-list">
+          <li class="doc-list-item"><strong>Standing up a new MFE went from about a week of boilerplate to roughly a day (~80% faster)</strong>, once teams built on the shared template I hardened.</li>
+          <li class="doc-list-item"><strong>Parallelizing the test suite cut CI from about 35 minutes to about 12 (~65% faster)</strong>, with no loss in coverage.</li>
+          <li class="doc-list-item">Host-side work across <strong>5+ distinct MFE surfaces</strong>.</li>
+          <li class="doc-list-item">One MFE built from its <strong>first commit</strong> through frontend, infrastructure, deployment, and backend.</li>
+          <li class="doc-list-item">The platform composes <strong>27 remote modules</strong> (22 in the lightweight integration shell) — the shared foundation many teams build on.</li>
+          <li class="doc-list-item">Frontend delivery moved into infrastructure-as-code (CDK), with single-command deploys and automated PR-preview environments replacing manual setup.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="doc-section-title">What I learned</h2>
+        <p class="doc-p">
+          Platform work is measured in other people's velocity, not your own commits. The wins that lasted were the shared, boring ones: the template, the library, the pipeline, because every team after you inherits them.
+        </p>
+        <p class="doc-p" style="margin-bottom: 0;">
+          The biggest thing built on this platform is the membership servicing rebuild. <a class="retro-link" href="./casestudy-ama.html">Read that case study →</a>
+        </p>
+        <p class="doc-p" style="margin-top: 16px;">
+          <a class="retro-link" href="./projects.html">← Back to Projects</a>
+        </p>
+      </section>
+
+      <footer style="margin-top: 30px; padding-top: 12px; border-top: 1px dashed #ACA899; text-align: center; font-size: 11px; font-family: var(--font-mono); color: #555;">
+        PLATFORM.TXT · Calgary, AB
+      </footer>
+    </main>
+  </div>
+
+  <div class="win95-window win95-outset app-window is-closed" data-window="minesweeper">
+    <header class="win95-titlebar">
+      <div class="title-text"><span class="title-icon">[M]</span><span>Minesweeper</span></div>
+      <div class="titlebar-controls">
+        <button class="win95-btn" aria-label="Minimize">_</button>
+        <button class="win95-btn" aria-label="Maximize">⬜</button>
+        <button class="win95-btn" aria-label="Close">✕</button>
+      </div>
+    </header>
+    <div class="desktop-app-frame win95-inset">
+      <iframe title="Minesweeper" src="./minesweeper.html"></iframe>
+    </div>
+  </div>
+
+  <div class="win95-window win95-outset app-window app-window--paint is-closed" data-window="paint">
+    <header class="win95-titlebar">
+      <div class="title-text"><span class="title-icon">[P]</span><span>Paint</span></div>
+      <div class="titlebar-controls">
+        <button class="win95-btn" aria-label="Minimize">_</button>
+        <button class="win95-btn" aria-label="Maximize">⬜</button>
+        <button class="win95-btn" aria-label="Close">✕</button>
+      </div>
+    </header>
+    <div class="desktop-app-frame win95-inset">
+      <iframe title="JS Paint" src="https://jspaint.app"></iframe>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>

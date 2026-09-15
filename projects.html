@@ -113,24 +113,26 @@
       </section>
 
       <section>
-        <h2 class="doc-section-title">Alberta Motor Association — Micro-Frontend Platform</h2>
+        <h2 class="doc-section-title">Alberta Motor Association — Membership Servicing Rebuild</h2>
 
         <div class="project-item">
           <div class="project-head">
-            <span>POS web app → Micro-Frontends</span>
-            <span class="project-tag">2022–Present // React · MFE · TypeScript</span>
+            <span>Membership servicing, rebuilt</span>
+            <span class="project-tag">2022–Present // React MFE · Serverless · CDK</span>
           </div>
           <p class="project-body">
-            AMA's agent POS was an aging web app: bloated, buggy, and slow to change. When I joined we started rebuilding it. I was one of the first to lead the spike on micro-frontends and built the proof of concept we used to break the monolith apart. Once it was decoupled into MFEs, the app got faster and easier for agents to use, and it moved membership and product sales.
+            AMA's staff service memberships in an internal system: enrollment, coverage changes, cancellations, reinstatements. I helped rebuild it as a micro-frontend and built the servicing features plus the reliability layer underneath, while years of legacy records were consolidated into the new platform.
           </p>
           <ul class="doc-list">
-            <li class="doc-list-item"><strong>What stuck around:</strong> I wrote the first template MFE repo, which other teams have reused many times, and a shared helper library for the functions every MFE needs. Together they cut a lot of duplicated code.</li>
-            <li class="doc-list-item"><strong>Recent work:</strong> a new "Community" membership tier. It's a lower-cost monthly plan where members pick the benefits they want and skip the ones they don't.</li>
-            <li class="doc-list-item"><strong>Faster to build and ship:</strong> spinning up a new app used to take days of boilerplate. The template and shared tooling brought that to about a day (roughly 60% less), and parallelizing the test suite made deploys about 65% faster.</li>
-            <li class="doc-list-item"><strong>Better for agents:</strong> smoother transaction flows let agents get through about 40% more per shift, and Playwright catching regressions before release dropped production bugs about 30%.</li>
-            <li class="doc-list-item"><strong>The hard part:</strong> micro-frontends aren't free. Shared dependencies drift across teams and get painful fast, so a lot of the work is keeping those shared packages stable so nobody gets blocked.</li>
-            <li class="doc-list-item"><strong>Beyond code:</strong> I mentor new interns and take scrum roles on the team.</li>
+            <li class="doc-list-item"><strong>What I built:</strong> enrollment, cancellation and refund, coverage-change, and reinstatement flows, with invoice previews so staff see the outcome before committing.</li>
+            <li class="doc-list-item"><strong>Reliability layer:</strong> event-driven workflows with idempotency, retries, duplicate suppression, and a failure queue, so changes stay safe while records are mid-migration.</li>
+            <li class="doc-list-item"><strong>Migration compatibility:</strong> legacy-identifier lookup and preserved membership-number lineage kept old records searchable and correct.</li>
+            <li class="doc-list-item"><strong>Scope:</strong> <strong>4+ years</strong> and <strong>48 merged PRs</strong> across the MFE, serverless backend, database migrations, CI, and infrastructure.</li>
+            <li class="doc-list-item"><strong>Platform:</strong> this MFE lives in AMA's internal point-of-sale platform, which I also work on (shell, shared tooling, delivery).</li>
           </ul>
+          <p class="doc-p" style="margin: 10px 0 0;">
+            Case studies: <a class="retro-link" href="./casestudy-ama.html">Membership rebuild →</a> &nbsp;·&nbsp; <a class="retro-link" href="./casestudy-platform.html">Micro-frontend platform →</a>
+          </p>
         </div>
       </section>
 
