@@ -113,7 +113,7 @@
         <div class="hero-copy">
           <div class="hero-kicker">React · TypeScript · Node.js · GraphQL · AWS</div>
           <p class="doc-p" style="margin-bottom: 0;">
-            I build the in-house POS and billing software AMA's agents use every day, across the frontend, backend, and the infrastructure under it. On the side I co-founded <a class="retro-link" href="https://findnaseeb.com" target="_blank" rel="noopener">findnaseeb</a>, an in-person matchmaking platform that real people actually use. Outside work I'm usually building something too. Right now that's a project car.
+            Full-stack engineer on AMA's internal POS and billing platform: React micro-frontends, serverless workflows, and infrastructure for ~80K transactions/month across 600+ agents. Also co-founder of <a class="retro-link" href="https://findnaseeb.com" target="_blank" rel="noopener">findnaseeb</a>, an in-person matchmaking platform for the Muslim community.
           </p>
           <div class="hero-actions">
             <a class="win95-action" href="./projects.html">View Projects</a>
@@ -125,6 +125,22 @@
 
       <section>
         <h2 class="doc-section-title">Selected Work</h2>
+
+        <div class="project-item">
+          <div class="project-head">
+            <span>Alberta Motor Association</span>
+            <span class="project-tag">2022–Present // React MFE · AWS</span>
+          </div>
+          <ul class="doc-list" style="margin-bottom: 0;">
+            <li class="doc-list-item">I work on the internal POS and billing platform AMA's agents use to sell and service memberships.</li>
+            <li class="doc-list-item">Rebuilt core membership servicing flows (enrollment, cancellations, reinstatements) as a React micro-frontend.</li>
+            <li class="doc-list-item">Built the reliability layer underneath: event-driven workflows with idempotency, retries, duplicate suppression, and failure recovery.</li>
+            <li class="doc-list-item">The platform supports <strong>~80K completed transactions/month</strong> across <strong>600+ active agents</strong>.</li>
+          </ul>
+          <p class="doc-p" style="margin: 6px 0 0; font-size: 12px;">
+            <a class="retro-link" href="./casestudy-ama.html">Membership rebuild →</a> &nbsp;·&nbsp; <a class="retro-link" href="./casestudy-platform.html">Platform →</a>
+          </p>
+        </div>
 
         <div class="project-item">
           <div class="project-head">
@@ -141,27 +157,13 @@
 
         <div class="project-item">
           <div class="project-head">
-            <span>Membership servicing, rebuilt</span>
-            <span class="project-tag">Alberta Motor Association // React MFE · Serverless</span>
-          </div>
-          <ul class="doc-list" style="margin-bottom: 0;">
-            <li class="doc-list-item">Rebuilt AMA's membership servicing (enrollment, cancellations, reinstatements) as a micro-frontend.</li>
-            <li class="doc-list-item">Built the reliability layer underneath: event-driven workflows with idempotency, retries, and a failure queue.</li>
-            <li class="doc-list-item"><strong>48 merged PRs</strong> over 4 years, across the MFE, serverless backend, migrations, CI, and infra.</li>
-          </ul>
-          <p class="doc-p" style="margin: 6px 0 0; font-size: 12px;">
-            <a class="retro-link" href="./casestudy-ama.html">Read the case study →</a>
-          </p>
-        </div>
-
-        <div class="project-item">
-          <div class="project-head">
             <span>Liveworks Hospitality Marketplace</span>
             <span class="project-tag">2024 // Node + PostgreSQL + AWS</span>
           </div>
           <ul class="doc-list" style="margin-bottom: 0;">
-            <li class="doc-list-item">A marketplace connecting venues with casual staff.</li>
-            <li class="doc-list-item">Built the backend: payments between both sides, job routing, and ops tooling.</li>
+            <li class="doc-list-item">Early backend project for a hospitality staffing marketplace.</li>
+            <li class="doc-list-item">Worked on job routing, Stripe payment flows, and internal admin tooling.</li>
+            <li class="doc-list-item">First substantial exposure to marketplace edge cases like refunds, no-shows, and disputes.</li>
           </ul>
         </div>
 

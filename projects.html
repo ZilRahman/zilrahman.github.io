@@ -92,6 +92,30 @@
       </section>
 
       <section>
+        <h2 class="doc-section-title">Alberta Motor Association — POS, Billing, and Micro-Frontend Platform</h2>
+
+        <div class="project-item">
+          <div class="project-head">
+            <span>Membership servicing + platform engineering</span>
+            <span class="project-tag">2022–Present // React MFE · AWS</span>
+          </div>
+          <p class="project-body">
+            AMA's staff service memberships in an internal POS and billing platform: enrollment, coverage changes, cancellations, reinstatements. I helped rebuild the servicing experience as a micro-frontend and built the reliability layer underneath, while years of legacy records were consolidated into the new platform.
+          </p>
+          <ul class="doc-list">
+            <li class="doc-list-item"><strong>What I built:</strong> enrollment, cancellation and refund, coverage-change, and reinstatement flows, with invoice previews so staff see the outcome before committing.</li>
+            <li class="doc-list-item"><strong>Reliability layer:</strong> event-driven workflows with idempotency, retries, duplicate suppression, and a failure queue, so changes stay safe while records are mid-migration.</li>
+            <li class="doc-list-item"><strong>Migration compatibility:</strong> legacy-identifier lookup and preserved membership-number lineage kept old records searchable and correct.</li>
+            <li class="doc-list-item"><strong>Scale:</strong> the platform supports <strong>~80K completed transactions/month</strong> across <strong>600+ active agents</strong>.</li>
+            <li class="doc-list-item"><strong>Platform:</strong> this MFE lives in AMA's internal point-of-sale platform, which I also work on (shell, shared tooling, delivery).</li>
+          </ul>
+          <p class="doc-p" style="margin: 10px 0 0;">
+            Case studies: <a class="retro-link" href="./casestudy-ama.html">Membership rebuild →</a> &nbsp;·&nbsp; <a class="retro-link" href="./casestudy-platform.html">Micro-frontend platform →</a>
+          </p>
+        </div>
+      </section>
+
+      <section>
         <h2 class="doc-section-title">findnaseeb — In-Person, AI-Assisted Matchmaking</h2>
 
         <div class="project-item">
@@ -113,30 +137,6 @@
       </section>
 
       <section>
-        <h2 class="doc-section-title">Alberta Motor Association — Membership Servicing Rebuild</h2>
-
-        <div class="project-item">
-          <div class="project-head">
-            <span>Membership servicing, rebuilt</span>
-            <span class="project-tag">2022–Present // React MFE · Serverless · CDK</span>
-          </div>
-          <p class="project-body">
-            AMA's staff service memberships in an internal system: enrollment, coverage changes, cancellations, reinstatements. I helped rebuild it as a micro-frontend and built the servicing features plus the reliability layer underneath, while years of legacy records were consolidated into the new platform.
-          </p>
-          <ul class="doc-list">
-            <li class="doc-list-item"><strong>What I built:</strong> enrollment, cancellation and refund, coverage-change, and reinstatement flows, with invoice previews so staff see the outcome before committing.</li>
-            <li class="doc-list-item"><strong>Reliability layer:</strong> event-driven workflows with idempotency, retries, duplicate suppression, and a failure queue, so changes stay safe while records are mid-migration.</li>
-            <li class="doc-list-item"><strong>Migration compatibility:</strong> legacy-identifier lookup and preserved membership-number lineage kept old records searchable and correct.</li>
-            <li class="doc-list-item"><strong>Scope:</strong> <strong>4+ years</strong> and <strong>48 merged PRs</strong> across the MFE, serverless backend, database migrations, CI, and infrastructure.</li>
-            <li class="doc-list-item"><strong>Platform:</strong> this MFE lives in AMA's internal point-of-sale platform, which I also work on (shell, shared tooling, delivery).</li>
-          </ul>
-          <p class="doc-p" style="margin: 10px 0 0;">
-            Case studies: <a class="retro-link" href="./casestudy-ama.html">Membership rebuild →</a> &nbsp;·&nbsp; <a class="retro-link" href="./casestudy-platform.html">Micro-frontend platform →</a>
-          </p>
-        </div>
-      </section>
-
-      <section>
         <h2 class="doc-section-title">Liveworks — Hospitality Marketplace</h2>
 
         <div class="project-item">
@@ -145,11 +145,11 @@
             <span class="project-tag">2024 // Node + PostgreSQL + AWS</span>
           </div>
           <p class="project-body">
-            A marketplace that connects venues with casual staff. It runs payments between both sides and has a web admin panel.
+            An early backend project for a hospitality staffing marketplace, and my first substantial exposure to marketplace logic beyond CRUD: job routing, payment flows, and internal tools for messy operational edge cases.
           </p>
           <ul class="doc-list">
-            <li class="doc-list-item"><strong>What I built:</strong> the backend. Job routing, payments between venues and workers, and the tools the ops team used every day.</li>
-            <li class="doc-list-item"><strong>The hard part:</strong> marketplace payments. Money moving between two sides means edge cases everywhere: refunds, no-shows, disputes. Most of the work went into the unhappy paths.</li>
+            <li class="doc-list-item"><strong>What I built:</strong> backend features for job routing, Stripe payment flows, and admin tooling.</li>
+            <li class="doc-list-item"><strong>The hard part:</strong> marketplace payments. Money moving between two sides means edge cases everywhere: refunds, no-shows, disputes. Most of the useful learning was in the unhappy paths.</li>
             <li class="doc-list-item"><strong>Stack:</strong> Node.js, PostgreSQL, AWS, Stripe.</li>
           </ul>
         </div>

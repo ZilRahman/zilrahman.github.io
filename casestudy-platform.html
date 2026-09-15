@@ -90,6 +90,9 @@
         <p class="case-lead">
           AMA's staff software is a large React application that many teams build in at once. It runs as a micro-frontend platform: a container shell hosts independently built and deployed frontends, on top of shared tooling that keeps them consistent. The platform existed before I joined. My work was to extend, harden, and operationalize it, and to build one of its frontends from scratch.
         </p>
+        <p class="case-lead">
+          This case study focuses on platform work: micro-frontend composition, shared tooling, CI, and delivery infrastructure.
+        </p>
         <p class="case-stats">new-MFE setup ~80% faster · CI ~65% faster · 27 remote modules</p>
       </section>
 
@@ -151,27 +154,23 @@
       </div>
 
       <section>
-        <h2 class="doc-section-title">What it delivered</h2>
+        <h2 class="doc-section-title">Impact</h2>
         <ul class="doc-list">
           <li class="doc-list-item"><strong>Standing up a new MFE went from about a week of boilerplate to roughly a day (~80% faster)</strong>, once teams built on the shared template I hardened.</li>
           <li class="doc-list-item"><strong>Parallelizing the test suite cut CI from about 35 minutes to about 12 (~65% faster)</strong>, with no loss in coverage.</li>
           <li class="doc-list-item">Host-side work across <strong>5+ distinct MFE surfaces</strong>.</li>
           <li class="doc-list-item">One MFE built from its <strong>first commit</strong> through frontend, infrastructure, deployment, and backend.</li>
-          <li class="doc-list-item">The platform composes <strong>27 remote modules</strong> (22 in the lightweight integration shell) — the shared foundation many teams build on.</li>
+          <li class="doc-list-item">The broader POS platform supports <strong>~80K completed transactions/month</strong> across <strong>600+ active agents</strong>.</li>
+          <li class="doc-list-item">The platform composes <strong>27 remote modules</strong> (22 in the lightweight integration shell), so teams can build and deploy their parts independently while staff still use one unified POS application.</li>
           <li class="doc-list-item">Frontend delivery moved into infrastructure-as-code (CDK), with single-command deploys and automated PR-preview environments replacing manual setup.</li>
         </ul>
       </section>
 
       <section>
-        <h2 class="doc-section-title">What I learned</h2>
-        <p class="doc-p">
-          Platform work is measured in other people's velocity, not your own commits. The wins that lasted were the shared, boring ones: the template, the library, the pipeline, because every team after you inherits them.
-        </p>
-        <p class="doc-p" style="margin-bottom: 0;">
-          The biggest thing built on this platform is the membership servicing rebuild. <a class="retro-link" href="./casestudy-ama.html">Read that case study →</a>
-        </p>
         <p class="doc-p" style="margin-top: 16px;">
-          <a class="retro-link" href="./projects.html">← Back to Projects</a>
+          One major frontend on this platform is the membership servicing rebuild. <a class="retro-link" href="./casestudy-ama.html">Read that case study →</a>
+          &nbsp;·&nbsp;
+          <a class="retro-link" href="./projects.html">Back to Projects →</a>
         </p>
       </section>
 

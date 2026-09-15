@@ -531,11 +531,12 @@ body {
 
 .case-stats {
   margin: 0 0 16px;
-  padding: 9px 0;
-  border-top: 1px solid #E4E1D4;
-  border-bottom: 1px solid #E4E1D4;
+  padding: 10px 12px;
+  border: 1px solid #B7CDEB;
+  border-left: 4px solid var(--xp-blue-dark);
+  background: #EEF4FE;
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: bold;
   color: var(--xp-blue-dark);
   line-height: 1.5;
