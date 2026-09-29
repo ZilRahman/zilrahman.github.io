@@ -521,6 +521,115 @@ body {
   color: #555555;
 }
 
+/* --- Case study pages --- */
+.case-lead {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #2b2b2b;
+  margin-bottom: 12px;
+}
+
+.case-stats {
+  margin: 0 0 16px;
+  padding: 10px 12px;
+  border: 1px solid #B7CDEB;
+  border-left: 4px solid var(--xp-blue-dark);
+  background: #EEF4FE;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: bold;
+  color: var(--xp-blue-dark);
+  line-height: 1.5;
+}
+
+.case-figure {
+  margin: 18px 0;
+  padding: 16px;
+  background: #FAFAF7;
+  border: 1px solid #D5D2C4;
+  border-radius: 4px;
+}
+
+.case-figure svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.case-figure figcaption {
+  margin-top: 10px;
+  font-size: 11px;
+  color: #666666;
+  font-family: var(--font-mono);
+  text-align: center;
+  line-height: 1.4;
+}
+
+.case-callout {
+  margin: 18px 0;
+  padding: 12px 16px;
+  background: #EEF4FE;
+  border-left: 3px solid var(--xp-blue-dark);
+  border-radius: 0 3px 3px 0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.case-shot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin: 12px 0;
+}
+
+.case-shot {
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 12px;
+  background: repeating-linear-gradient(45deg, #F2F0E9, #F2F0E9 10px, #ECEAE1 10px, #ECEAE1 20px);
+  border: 1px dashed #B8B4A4;
+  border-radius: 3px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #8A8676;
+  line-height: 1.4;
+}
+
+.case-screen-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin: 12px 0 4px;
+}
+
+.case-screen {
+  margin: 0;
+  padding: 10px;
+  background: #FAFAF7;
+  border: 1px solid #D5D2C4;
+  border-radius: 4px;
+}
+
+.case-screen img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #ACA899;
+  background: #FFFFFF;
+}
+
+.case-screen figcaption {
+  margin-top: 8px;
+  font-size: 11px;
+  color: #666666;
+  font-family: var(--font-mono);
+  line-height: 1.4;
+  text-align: center;
+}
+
 /* Main Section Heading — softened for a calmer reading area */
 .doc-section-title {
   font-size: 13px;

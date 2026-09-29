@@ -92,7 +92,31 @@
       </section>
 
       <section>
-        <h2 class="doc-section-title">findnaseeb — In-Person, AI-Assisted Matchmaking</h2>
+        <h2 class="doc-section-title">Alberta Motor Association — POS, Billing, and Micro-Frontend Platform</h2>
+
+        <div class="project-item">
+          <div class="project-head">
+            <span>Membership servicing + platform engineering</span>
+            <span class="project-tag">2022–Present // React MFE · AWS</span>
+          </div>
+          <p class="project-body">
+            AMA agents service memberships in an internal POS and billing platform: enrollment, coverage changes, cancellations, reinstatements. I rebuilt core servicing flows as a React micro-frontend and worked on the reliability layer underneath, while years of legacy records were consolidated into the new platform.
+          </p>
+          <ul class="doc-list">
+            <li class="doc-list-item"><strong>What I built:</strong> enrollment, cancellation and refund, coverage-change, and reinstatement flows, with invoice previews so staff see the outcome before committing.</li>
+            <li class="doc-list-item"><strong>Reliability layer:</strong> event-driven workflows with idempotency, retries, duplicate suppression, and a failure queue, so changes stay safe while records are mid-migration.</li>
+            <li class="doc-list-item"><strong>Migration compatibility:</strong> legacy-identifier lookup and preserved membership-number lineage kept old records searchable and correct.</li>
+            <li class="doc-list-item"><strong>Scale:</strong> the platform supports <strong>~80K completed transactions/month</strong> across <strong>600+ active agents</strong>.</li>
+            <li class="doc-list-item"><strong>Platform:</strong> this MFE lives inside AMA's internal POS platform, where I also work on the shell, shared tooling, and delivery.</li>
+          </ul>
+          <p class="doc-p" style="margin: 10px 0 0;">
+            Case studies: <a class="retro-link" href="./casestudy-ama.html">Membership rebuild →</a> &nbsp;·&nbsp; <a class="retro-link" href="./casestudy-platform.html">Micro-frontend platform →</a>
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="doc-section-title">findnaseeb — In-Person Matchmaking</h2>
 
         <div class="project-item">
           <div class="project-head">
@@ -100,37 +124,17 @@
             <span class="project-tag">2026 // Next.js · TypeScript · Technical Co-founder</span>
           </div>
           <p class="project-body">
-            Most dating apps are built around swiping. We wanted to start somewhere else: getting people into the same room. findnaseeb is built around real events instead of profiles. I co-founded it with two other people (one engineer, one product/UX designer) and built the app.
+            Most dating apps are built around swiping. We wanted to start somewhere else: getting people into the same room. findnaseeb is built around real events instead of swipe-style matching. I co-founded it with two other people (one engineer, one product/UX designer) and built the app.
           </p>
           <ul class="doc-list">
-            <li class="doc-list-item"><strong>What I built:</strong> the web app, the APIs, the data model, and the AI step that shortlists who to invite to each event.</li>
-            <li class="doc-list-item"><strong>The AI part:</strong> it looks at profiles and some context (location, who's new, who's been before, group balance) and drafts a guest list. We always review that by hand before anything goes out.</li>
-            <li class="doc-list-item"><strong>A tradeoff I'd defend:</strong> we're a small team, so I kept the stack deliberately boring. Next.js and SQLite on a single box. It's easy to run and easy to reason about, and we'll move off SQLite when concurrency actually forces us to.</li>
-            <li class="doc-list-item"><strong>Trust &amp; safety:</strong> members can block anyone, and blocks come straight to us. We haven't needed heavy automated moderation. Meeting in person tends to self-select for people who behave.</li>
-            <li class="doc-list-item"><strong>Where it's at:</strong> launched early 2026. About 200+ members in Calgary, all from organic Instagram and TikTok. Waitlists open in Toronto, Vancouver, and Chicago.</li>
+            <li class="doc-list-item"><strong>What I built:</strong> the web app, the APIs, the data model, and the invite workflow we use for each event.</li>
+            <li class="doc-list-item"><strong>Invite list:</strong> software uses profile and event context to draft a guest list. We always review it by hand before anything goes out.</li>
+            <li class="doc-list-item"><strong>A tradeoff I'd defend:</strong> small team, boring stack. Next.js and SQLite on a single box is easy to run and reason about. We'll move off SQLite when concurrency forces us to.</li>
+            <li class="doc-list-item"><strong>Where it's at:</strong> launched early 2026. 200+ members in Calgary, all from organic Instagram and TikTok. Waitlists open in Toronto, Vancouver, and Chicago.</li>
           </ul>
-        </div>
-      </section>
-
-      <section>
-        <h2 class="doc-section-title">Alberta Motor Association — Micro-Frontend Platform</h2>
-
-        <div class="project-item">
-          <div class="project-head">
-            <span>POS web app → Micro-Frontends</span>
-            <span class="project-tag">2022–Present // React · MFE · TypeScript</span>
-          </div>
-          <p class="project-body">
-            AMA's agent POS was an aging web app: bloated, buggy, and slow to change. When I joined we started rebuilding it. I was one of the first to lead the spike on micro-frontends and built the proof of concept we used to break the monolith apart. Once it was decoupled into MFEs, the app got faster and easier for agents to use, and it moved membership and product sales.
+          <p class="doc-p" style="margin: 10px 0 0;">
+            <a class="retro-link" href="./casestudy-naseeb.html">Case study →</a> &nbsp;·&nbsp; <a class="retro-link" href="https://findnaseeb.com" target="_blank" rel="noopener">Live site →</a>
           </p>
-          <ul class="doc-list">
-            <li class="doc-list-item"><strong>What stuck around:</strong> I wrote the first template MFE repo, which other teams have reused many times, and a shared helper library for the functions every MFE needs. Together they cut a lot of duplicated code.</li>
-            <li class="doc-list-item"><strong>Recent work:</strong> a new "Community" membership tier. It's a lower-cost monthly plan where members pick the benefits they want and skip the ones they don't.</li>
-            <li class="doc-list-item"><strong>Faster to build and ship:</strong> spinning up a new app used to take days of boilerplate. The template and shared tooling brought that to about a day (roughly 60% less), and parallelizing the test suite made deploys about 65% faster.</li>
-            <li class="doc-list-item"><strong>Better for agents:</strong> smoother transaction flows let agents get through about 40% more per shift, and Playwright catching regressions before release dropped production bugs about 30%.</li>
-            <li class="doc-list-item"><strong>The hard part:</strong> micro-frontends aren't free. Shared dependencies drift across teams and get painful fast, so a lot of the work is keeping those shared packages stable so nobody gets blocked.</li>
-            <li class="doc-list-item"><strong>Beyond code:</strong> I mentor new interns and take scrum roles on the team.</li>
-          </ul>
         </div>
       </section>
 
@@ -143,11 +147,11 @@
             <span class="project-tag">2024 // Node + PostgreSQL + AWS</span>
           </div>
           <p class="project-body">
-            A marketplace that connects venues with casual staff. It runs payments between both sides and has a web admin panel.
+            An early backend project for a hospitality staffing marketplace, and my first substantial exposure to marketplace logic beyond CRUD: job routing, payment flows, and internal tools for messy operational edge cases.
           </p>
           <ul class="doc-list">
-            <li class="doc-list-item"><strong>What I built:</strong> the backend. Job routing, payments between venues and workers, and the tools the ops team used every day.</li>
-            <li class="doc-list-item"><strong>The hard part:</strong> marketplace payments. Money moving between two sides means edge cases everywhere: refunds, no-shows, disputes. Most of the work went into the unhappy paths.</li>
+            <li class="doc-list-item"><strong>What I built:</strong> backend features for job routing, Stripe payment flows, and admin tooling.</li>
+            <li class="doc-list-item"><strong>The hard part:</strong> marketplace payments. Money moving between two sides means edge cases everywhere: refunds, no-shows, disputes. Most of the useful learning was in the unhappy paths.</li>
             <li class="doc-list-item"><strong>Stack:</strong> Node.js, PostgreSQL, AWS, Stripe.</li>
           </ul>
         </div>
