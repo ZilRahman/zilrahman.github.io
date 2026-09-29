@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zil Rahman | findnaseeb Case Study</title>
-  <meta name="description" content="Case study: findnaseeb, an in-person matchmaking platform for the Muslim community — co-founded and built by Zil Rahman, with AI-assisted event curation.">
+  <meta name="description" content="Case study: findnaseeb, an in-person matchmaking platform for the Muslim community — co-founded and built by Zil Rahman.">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
@@ -88,31 +88,46 @@
         <h1 class="doc-title">findnaseeb — In-Person Matchmaking</h1>
         <p class="doc-subtitle">Case study · Co-founder · 2026–Present · <a class="retro-link" href="https://findnaseeb.com" target="_blank" rel="noopener">findnaseeb.com</a></p>
         <p class="case-lead">
-          findnaseeb is an in-person matchmaking platform for the Muslim community. Instead of swiping through profiles, people come to real, curated events. I co-founded it with two others (one more engineer and a product/UX designer) and built the app: the web product, the APIs, the data model, and the AI step that helps decide who to invite to each event.
+          I co-founded findnaseeb, an in-person matchmaking platform for the Muslim community. I built the app, APIs, data model, and the invite workflow we use to decide who gets invited to each event.
         </p>
+        <div class="case-stats">200+ members · zero ad spend · 3-city waitlist · human-reviewed invites</div>
       </section>
 
       <section>
-        <h2 class="doc-section-title">The problem</h2>
+        <h2 class="doc-section-title">Product screens</h2>
+        <div class="case-screen-grid">
+          <figure class="case-screen case-screen--wide">
+            <img src="./images/case-studies/naseeb-homepage.png" alt="findnaseeb public homepage showing the in-person matchmaking positioning and real event photos" loading="lazy">
+            <figcaption>Public homepage: real meetup photos, clear positioning, and a simple signup path.</figcaption>
+          </figure>
+          <figure class="case-screen case-screen--wide">
+            <img src="./images/case-studies/naseeb-onboarding.png" alt="findnaseeb onboarding flow showing phone verification, questionnaire, faith and practice inputs, photo upload, and completion screens" loading="lazy">
+            <figcaption>Onboarding flow: verification, compatibility questions, photo upload, and completion.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="doc-section-title">The product bet</h2>
         <p class="doc-p">
-          Most matchmaking apps optimize for swiping and endless profiles. They're easy to build and easy to ignore. We wanted the opposite: get compatible people into the same room. Which means the hard problem isn't the app, it's who's in the room. Curation is the product.
+          Most matchmaking apps are built around swiping, profiles, and endless browsing. We wanted the opposite: get the right people into the same room. That made the invite list the real product work.
         </p>
       </section>
 
       <section>
         <h2 class="doc-section-title">What I built</h2>
         <ul class="doc-list">
-          <li class="doc-list-item">The web app and the APIs behind it, on Next.js and TypeScript.</li>
-          <li class="doc-list-item">The data model for members, events, and attendance.</li>
-          <li class="doc-list-item">The AI-assisted curation step: member profiles and event context (location, who's new, who's been before, group balance) go through an AI pass that drafts a guest list. A person always reviews it before anything goes out.</li>
-          <li class="doc-list-item">The member basics: profiles, the event flow, and safety (members can block anyone, and blocks come straight to us).</li>
+          <li class="doc-list-item">A Next.js and TypeScript app with the APIs behind profiles, events, invitations, and attendance.</li>
+          <li class="doc-list-item">The data model for members, event cohorts, attendance history, and safety actions.</li>
+          <li class="doc-list-item">A guest-list draft step that uses profile and event context, then gets reviewed by us before invites go out.</li>
+          <li class="doc-list-item">Admin and safety basics, including manual review points and member blocking.</li>
         </ul>
       </section>
 
       <section>
         <h2 class="doc-section-title">How curation works</h2>
         <figure class="case-figure">
-          <svg viewBox="0 0 720 180" xmlns="http://www.w3.org/2000/svg" font-family="Tahoma, sans-serif" role="img" aria-label="Member profiles and event context feed an AI pass that drafts a guest list, a person reviews it, and it becomes an in-person event.">
+          <svg viewBox="0 0 720 180" xmlns="http://www.w3.org/2000/svg" font-family="Tahoma, sans-serif" role="img" aria-label="Member profiles and event context feed a draft guest list, a person reviews it, and it becomes an in-person event.">
             <defs>
               <marker id="arr" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto">
                 <path d="M0 0 L6 3 L0 6 z" fill="#7AA6D5"/>
@@ -124,7 +139,7 @@
             <text x="98" y="107" text-anchor="middle" fill="#0054E3" font-size="11.5" font-weight="bold">Event context</text>
             <text x="98" y="121" text-anchor="middle" fill="#4a72b8" font-size="9.5">location · new/returning · balance</text>
             <rect x="250" y="54" width="150" height="42" rx="4" fill="#E8F0FE" stroke="#7AA6D5"/>
-            <text x="325" y="80" text-anchor="middle" fill="#0054E3" font-size="12" font-weight="bold">AI drafts guest list</text>
+            <text x="325" y="80" text-anchor="middle" fill="#0054E3" font-size="12" font-weight="bold">Draft guest list</text>
             <rect x="452" y="54" width="130" height="42" rx="4" fill="#FBE7C6" stroke="#D9A94E"/>
             <text x="517" y="80" text-anchor="middle" fill="#7a5a1e" font-size="12" font-weight="bold">Human review</text>
             <rect x="618" y="54" width="86" height="42" rx="4" fill="#0054E3"/>
@@ -138,45 +153,28 @@
             </g>
           </svg>
           <figcaption>
-            Profiles and event context feed an AI pass that drafts a guest list. A person reviews every list before invites go out — AI drafts, humans decide.
+            Profiles and event context feed a draft guest list. A person reviews every list before invites go out.
           </figcaption>
         </figure>
       </section>
 
       <div class="case-callout">
-        <strong>A decision I'd defend.</strong> We let AI draft, but never decide. A bad match at a small in-person event is expensive, so a person reviews every guest list before invites go out. And with a three-person team, I kept the stack deliberately boring — Next.js and SQLite on a single box, easy to run and easy to reason about. We'll move off SQLite when real concurrency forces it, not before.
+        <strong>A tradeoff I'd defend.</strong> We use software to draft, but people still decide. For a small event-based product, quality matters more than fully automated matching, so every guest list is reviewed before invites go out. I also kept the stack deliberately simple: Next.js, TypeScript, and SQLite while we're still learning what events actually need.
       </div>
 
       <section>
-        <h2 class="doc-section-title">Where it's at</h2>
+        <h2 class="doc-section-title">Where it is now</h2>
         <ul class="doc-list">
-          <li class="doc-list-item"><strong>200+ members</strong> in Calgary, grown with zero ad spend (organic Instagram and TikTok).</li>
-          <li class="doc-list-item">Waitlists open in <strong>3 cities across 2 countries</strong> (Toronto, Vancouver, Chicago).</li>
-          <li class="doc-list-item">Every event has landed, because the guest lists are curated by hand, not thrown together by an algorithm.</li>
+          <li class="doc-list-item"><strong>200+ members</strong> in Calgary, grown with zero ad spend through organic Instagram and TikTok.</li>
+          <li class="doc-list-item">Waitlists open in <strong>Toronto, Vancouver, and Chicago</strong>.</li>
         </ul>
       </section>
 
-      <section>
-        <h2 class="doc-section-title">Screens</h2>
-        <div class="case-shot-grid">
-          <div class="case-shot">Screenshot slot<br>(events / home)</div>
-          <div class="case-shot">Screenshot slot<br>(profile)</div>
-          <div class="case-shot">Screenshot slot<br>(event detail)</div>
-        </div>
-        <p class="doc-p muted" style="font-size: 11px;">
-          Real app screens go here — it's my own product, so these are safe to show. Live at <a class="retro-link" href="https://findnaseeb.com" target="_blank" rel="noopener">findnaseeb.com</a>.
-        </p>
-      </section>
-
-      <section>
-        <h2 class="doc-section-title">What I learned</h2>
-        <p class="doc-p" style="margin-bottom: 0;">
-          The unscalable part — hand-curating each event — is the part that works. AI makes it faster, but people keep the quality. And keeping the infrastructure boring is what lets a three-person team actually ship.
-        </p>
-        <p class="doc-p" style="margin-top: 16px;">
-          <a class="retro-link" href="./projects.html">← Back to Projects</a>
-        </p>
-      </section>
+      <p class="doc-p" style="margin-top: 16px; margin-bottom: 0;">
+        <a class="retro-link" href="https://findnaseeb.com" target="_blank" rel="noopener">Live site →</a>
+        &nbsp;·&nbsp;
+        <a class="retro-link" href="./projects.html">Back to Projects →</a>
+      </p>
 
       <footer style="margin-top: 30px; padding-top: 12px; border-top: 1px dashed #ACA899; text-align: center; font-size: 11px; font-family: var(--font-mono); color: #555;">
         NASEEB_CASE.TXT · Calgary, AB

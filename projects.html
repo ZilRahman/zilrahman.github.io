@@ -100,14 +100,14 @@
             <span class="project-tag">2022–Present // React MFE · AWS</span>
           </div>
           <p class="project-body">
-            AMA's staff service memberships in an internal POS and billing platform: enrollment, coverage changes, cancellations, reinstatements. I helped rebuild the servicing experience as a micro-frontend and built the reliability layer underneath, while years of legacy records were consolidated into the new platform.
+            AMA agents service memberships in an internal POS and billing platform: enrollment, coverage changes, cancellations, reinstatements. I rebuilt core servicing flows as a React micro-frontend and worked on the reliability layer underneath, while years of legacy records were consolidated into the new platform.
           </p>
           <ul class="doc-list">
             <li class="doc-list-item"><strong>What I built:</strong> enrollment, cancellation and refund, coverage-change, and reinstatement flows, with invoice previews so staff see the outcome before committing.</li>
             <li class="doc-list-item"><strong>Reliability layer:</strong> event-driven workflows with idempotency, retries, duplicate suppression, and a failure queue, so changes stay safe while records are mid-migration.</li>
             <li class="doc-list-item"><strong>Migration compatibility:</strong> legacy-identifier lookup and preserved membership-number lineage kept old records searchable and correct.</li>
             <li class="doc-list-item"><strong>Scale:</strong> the platform supports <strong>~80K completed transactions/month</strong> across <strong>600+ active agents</strong>.</li>
-            <li class="doc-list-item"><strong>Platform:</strong> this MFE lives in AMA's internal point-of-sale platform, which I also work on (shell, shared tooling, delivery).</li>
+            <li class="doc-list-item"><strong>Platform:</strong> this MFE lives inside AMA's internal POS platform, where I also work on the shell, shared tooling, and delivery.</li>
           </ul>
           <p class="doc-p" style="margin: 10px 0 0;">
             Case studies: <a class="retro-link" href="./casestudy-ama.html">Membership rebuild →</a> &nbsp;·&nbsp; <a class="retro-link" href="./casestudy-platform.html">Micro-frontend platform →</a>
@@ -116,7 +116,7 @@
       </section>
 
       <section>
-        <h2 class="doc-section-title">findnaseeb — In-Person, AI-Assisted Matchmaking</h2>
+        <h2 class="doc-section-title">findnaseeb — In-Person Matchmaking</h2>
 
         <div class="project-item">
           <div class="project-head">
@@ -124,15 +124,17 @@
             <span class="project-tag">2026 // Next.js · TypeScript · Technical Co-founder</span>
           </div>
           <p class="project-body">
-            Most dating apps are built around swiping. We wanted to start somewhere else: getting people into the same room. findnaseeb is built around real events instead of profiles. I co-founded it with two other people (one engineer, one product/UX designer) and built the app.
+            Most dating apps are built around swiping. We wanted to start somewhere else: getting people into the same room. findnaseeb is built around real events instead of swipe-style matching. I co-founded it with two other people (one engineer, one product/UX designer) and built the app.
           </p>
           <ul class="doc-list">
-            <li class="doc-list-item"><strong>What I built:</strong> the web app, the APIs, the data model, and the AI step that shortlists who to invite to each event.</li>
-            <li class="doc-list-item"><strong>The AI part:</strong> it looks at profiles and some context (location, who's new, who's been before, group balance) and drafts a guest list. We always review that by hand before anything goes out.</li>
-            <li class="doc-list-item"><strong>A tradeoff I'd defend:</strong> we're a small team, so I kept the stack deliberately boring. Next.js and SQLite on a single box. It's easy to run and easy to reason about, and we'll move off SQLite when concurrency actually forces us to.</li>
-            <li class="doc-list-item"><strong>Trust &amp; safety:</strong> members can block anyone, and blocks come straight to us. We haven't needed heavy automated moderation. Meeting in person tends to self-select for people who behave.</li>
-            <li class="doc-list-item"><strong>Where it's at:</strong> launched early 2026. About 200+ members in Calgary, all from organic Instagram and TikTok. Waitlists open in Toronto, Vancouver, and Chicago.</li>
+            <li class="doc-list-item"><strong>What I built:</strong> the web app, the APIs, the data model, and the invite workflow we use for each event.</li>
+            <li class="doc-list-item"><strong>Invite list:</strong> software uses profile and event context to draft a guest list. We always review it by hand before anything goes out.</li>
+            <li class="doc-list-item"><strong>A tradeoff I'd defend:</strong> small team, boring stack. Next.js and SQLite on a single box is easy to run and reason about. We'll move off SQLite when concurrency forces us to.</li>
+            <li class="doc-list-item"><strong>Where it's at:</strong> launched early 2026. 200+ members in Calgary, all from organic Instagram and TikTok. Waitlists open in Toronto, Vancouver, and Chicago.</li>
           </ul>
+          <p class="doc-p" style="margin: 10px 0 0;">
+            <a class="retro-link" href="./casestudy-naseeb.html">Case study →</a> &nbsp;·&nbsp; <a class="retro-link" href="https://findnaseeb.com" target="_blank" rel="noopener">Live site →</a>
+          </p>
         </div>
       </section>
 

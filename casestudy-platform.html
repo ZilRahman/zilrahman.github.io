@@ -88,7 +88,7 @@
         <h1 class="doc-title">AMA — Micro-Frontend Platform</h1>
         <p class="doc-subtitle">Case study · Alberta Motor Association · 2022–Present</p>
         <p class="case-lead">
-          AMA's staff software is a large React application that many teams build in at once. It runs as a micro-frontend platform: a container shell hosts independently built and deployed frontends, on top of shared tooling that keeps them consistent. The platform existed before I joined. My work was to extend, harden, and operationalize it, and to build one of its frontends from scratch.
+          AMA's staff software is a large React app built by multiple teams. A container shell composes independently deployed micro-frontends, while shared tooling keeps them consistent. The platform existed before I joined; my work was to extend it, harden it, and build one frontend from scratch.
         </p>
         <p class="case-lead">
           This case study focuses on platform work: micro-frontend composition, shared tooling, CI, and delivery infrastructure.
@@ -106,10 +106,10 @@
       <section>
         <h2 class="doc-section-title">What I built</h2>
         <ul class="doc-list">
-          <li class="doc-list-item"><strong>Composition:</strong> extended the container and a lightweight dev shell so teams can run, test, and integrate their frontends without launching the whole platform. Did host-side integration across 5+ MFE surfaces (payments, member servicing, registry, communication preferences, cart) and the Module Federation wiring behind it.</li>
-          <li class="doc-list-item"><strong>A greenfield MFE:</strong> built the communication-preferences frontend from its first commit, through deployment and later backend work.</li>
-          <li class="doc-list-item"><strong>The shared paved road:</strong> hardened the starter template and shared library other teams build on, with tests, error handling, production-deploy safeguards, shared mounting and compatibility, and security-sensitive dependency updates.</li>
-          <li class="doc-list-item"><strong>Repeatable delivery:</strong> reduced the lightweight shell's deploy to a single root-level command, moved container hosting into CDK, and set up automated PR-preview environments and staged releases instead of manual setup.</li>
+          <li class="doc-list-item"><strong>Composition:</strong> extended the container, dev shell, and Module Federation wiring across 5+ MFE surfaces.</li>
+          <li class="doc-list-item"><strong>Greenfield MFE:</strong> built communication preferences from first commit through deployment and backend work.</li>
+          <li class="doc-list-item"><strong>Shared tooling:</strong> hardened starter templates and shared libraries with tests, error handling, deploy safeguards, compatibility, and security updates.</li>
+          <li class="doc-list-item"><strong>Delivery:</strong> moved hosting into CDK and set up one-command deploys, PR previews, and staged releases.</li>
         </ul>
       </section>
 
@@ -150,7 +150,7 @@
       </section>
 
       <div class="case-callout">
-        <strong>Why it's built this way.</strong> A platform's real users are the other engineers. The highest-leverage work wasn't a feature. It was the paved road: a template, a shared library, single-command deploys, and PR previews, so a new team starts from "clone and go" instead of reverse-engineering the last team's setup. Unglamorous, but it's what lets independent teams ship without a central bottleneck.
+        <strong>Why it's built this way.</strong> For platform work, the users are other engineers. The useful work is often the boring work: templates, shared libraries, one-command deploys, and preview environments that let teams ship without asking another team to wire things up for them.
       </div>
 
       <section>

@@ -598,6 +598,38 @@ body {
   line-height: 1.4;
 }
 
+.case-screen-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin: 12px 0 4px;
+}
+
+.case-screen {
+  margin: 0;
+  padding: 10px;
+  background: #FAFAF7;
+  border: 1px solid #D5D2C4;
+  border-radius: 4px;
+}
+
+.case-screen img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #ACA899;
+  background: #FFFFFF;
+}
+
+.case-screen figcaption {
+  margin-top: 8px;
+  font-size: 11px;
+  color: #666666;
+  font-family: var(--font-mono);
+  line-height: 1.4;
+  text-align: center;
+}
+
 /* Main Section Heading — softened for a calmer reading area */
 .doc-section-title {
   font-size: 13px;

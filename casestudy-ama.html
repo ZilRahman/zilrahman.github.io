@@ -88,7 +88,7 @@
         <h1 class="doc-title">AMA — Membership Servicing Rebuild</h1>
         <p class="doc-subtitle">Case study · Alberta Motor Association · 2022–Present</p>
         <p class="case-lead">
-          AMA's staff service memberships all day: creating them, changing coverage, transferring, cancelling, reinstating. That work was spread across fragmented legacy systems. I helped rebuild it into one guided experience, and built the features that let staff act on both new and migrated records safely, while years of historical data were moved into the new platform.
+          AMA agents service memberships all day: creating them, changing coverage, transferring, cancelling, reinstating. That work was spread across fragmented legacy systems. I rebuilt core servicing flows into one guided experience, and built the features that let staff act on both new and migrated records safely, while years of historical data were moved into the new platform.
         </p>
         <p class="case-lead">
           This case study focuses on membership servicing: staff workflows, migrated-record compatibility, and the reliability layer behind enrollment, coverage changes, cancellations, and reinstatements.
@@ -106,12 +106,12 @@
       <section>
         <h2 class="doc-section-title">What I built</h2>
         <p class="doc-p">
-          My work ran across the UI, the APIs, the data model, and the workflow and reliability layers underneath.
+          My work covered the UI, APIs, data model, event workflows, and reliability handling.
         </p>
         <ul class="doc-list">
           <li class="doc-list-item">Enrollment and checkout, including payment-provider integration and transaction confirmation.</li>
           <li class="doc-list-item">Cancellation and refund flows with invoice previews, so staff see the financial outcome before committing a change.</li>
-          <li class="doc-list-item">Coverage-change journeys with household context, associate members, and prorated pricing.</li>
+          <li class="doc-list-item">Coverage-change flows with household context, associate members, and prorated pricing.</li>
           <li class="doc-list-item">Much of the reinstatement experience: multiple paths, previous-membership validation, billing, and fulfilment.</li>
           <li class="doc-list-item">The reliability layer beneath all of it: an event-driven workflow with validation, idempotency, retries, duplicate suppression, and a failure queue.</li>
           <li class="doc-list-item">Compatibility for migrated records: lookup by legacy identifiers and preserved membership-number lineage, so old memberships stayed searchable and correct.</li>
@@ -172,7 +172,7 @@
           <li class="doc-list-item">Staff moved from fragmented legacy workflows to one guided experience with transparent pricing and traceable lifecycle events.</li>
           <li class="doc-list-item">Migrated and newly created records work through the same experience.</li>
           <li class="doc-list-item">The rebuilt membership flows support a current run rate of roughly <strong>6,000 new household membership sales/month</strong>.</li>
-          <li class="doc-list-item">Scope: work spanned the micro-frontend, serverless backend, database migrations, CI, and infrastructure, with heavy end-to-end coverage (98 test files).</li>
+          <li class="doc-list-item">Scope: work spanned the micro-frontend, serverless backend, database migrations, CI, and infrastructure, with heavy end-to-end coverage.</li>
         </ul>
       </section>
 
