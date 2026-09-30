@@ -84,6 +84,10 @@ body {
   text-decoration: none;
 }
 
+.desktop-icon--pictures-primary {
+  top: 22px;
+}
+
 .desktop-icon:hover,
 .desktop-icon:focus-visible {
   background: rgba(49, 106, 197, 0.35);
@@ -406,6 +410,51 @@ body {
 
 .retro-link:hover {
   color: #FF6600;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin: 10px 0 0;
+  font-size: 12px;
+}
+
+.cta-label {
+  color: #333333;
+}
+
+.cta-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 3px 9px;
+  color: #1f5f18;
+  background: linear-gradient(180deg, #FFFFFF 0%, #EDF8E9 52%, #D9EFD1 100%);
+  border: 1px solid #7FB86D;
+  border-left: 3px solid var(--xp-start-green);
+  border-radius: 2px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1.2;
+  text-decoration: none;
+  box-shadow: inset 0 1px 0 #FFFFFF;
+}
+
+.cta-link:visited {
+  color: #1f5f18;
+}
+
+.cta-link:hover {
+  color: #FFFFFF;
+  background: linear-gradient(180deg, #6EBF47 0%, #3C9B35 100%);
+  border-color: #3C9B35;
+}
+
+.cta-link:active {
+  transform: translateY(1px);
 }
 
 .header-links {

@@ -9,10 +9,6 @@
 </head>
 <body>
 
-  <button class="desktop-icon desktop-icon--document" type="button" aria-label="Open PHOTOS.TXT" data-open-window="document">
-    <span class="desktop-icon-image" aria-hidden="true"></span>
-    <span>PHOTOS.TXT</span>
-  </button>
   <button class="desktop-icon desktop-icon--minesweeper" type="button" aria-label="Open Minesweeper" data-open-window="minesweeper">
     <span class="desktop-icon-image desktop-icon-image--minesweeper" aria-hidden="true"></span>
     <span>Minesweeper</span>
@@ -21,18 +17,17 @@
     <span class="desktop-icon-image desktop-icon-image--paint" aria-hidden="true"></span>
     <span>Paint</span>
   </button>
-  <a class="desktop-icon desktop-icon--pictures" href="./photos.html" aria-label="Open My Pictures">
+  <a class="desktop-icon desktop-icon--pictures desktop-icon--pictures-primary" href="./photos.html" aria-label="Open My Pictures">
     <span class="desktop-icon-image desktop-icon-image--pictures" aria-hidden="true"></span>
     <span>My Pictures</span>
   </a>
-
   <div class="win95-window win95-outset" data-window="document">
     <header class="win95-titlebar">
       <div class="title-text">
         <svg class="title-icon" viewBox="0 0 16 16" fill="currentColor">
           <path d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-7A1.5 1.5 0 0 0 14.5 4H7.5L5.5 2h-4z"/>
         </svg>
-        <span>PHOTOS.TXT - Document Viewer</span>
+        <span>My Pictures - Photo Viewer</span>
       </div>
       <div class="titlebar-controls">
         <button class="win95-btn" aria-label="Minimize">_</button>
@@ -64,7 +59,7 @@
       </div>
       <button class="taskbar-window is-active" type="button" data-task-window="document">
         <span class="taskbar-icon">[]</span>
-        <span>PHOTOS.TXT</span>
+        <span>My Pictures</span>
       </button>
       <button class="taskbar-window is-hidden" type="button" data-task-window="minesweeper">
         <span class="taskbar-icon">[]</span>
@@ -132,7 +127,7 @@
       </section>
 
       <footer style="margin-top: 30px; padding-top: 12px; border-top: 1px dashed #ACA899; text-align: center; font-size: 11px; font-family: var(--font-mono); color: #555;">
-        PHOTOS.TXT · Calgary, AB
+        MY_PICTURES · Calgary, AB
       </footer>
     </main>
   </div>
