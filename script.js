@@ -183,7 +183,13 @@ document.querySelectorAll("[data-task-window]").forEach((taskButton) => {
   taskButton.addEventListener("click", () => {
     const targetWindow = document.querySelector(`[data-window="${taskButton.dataset.taskWindow}"]`);
 
-    if (targetWindow) {
+    if (!targetWindow) {
+      return;
+    }
+
+    if (taskButton.classList.contains("is-active") && !targetWindow.classList.contains("is-minimized") && !targetWindow.classList.contains("is-closed")) {
+      minimizeWindow(targetWindow);
+    } else {
       restoreWindow(targetWindow);
     }
   });
